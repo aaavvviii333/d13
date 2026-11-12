@@ -1,0 +1,133 @@
+{
+  "id": "seed-build-a-bird",
+  "title": "Build a Bird",
+  "heroImage": "",
+  "overview": "The Build a Bird lesson invites first grade students to further explore the world of birds by building their own unique flapping bird. They combine creativity and mechanics while engaging with the engineering design process, testing their knowledge of bird anatomy to create a bird they can bring home. By interacting with our designed templates, students are exposed to in-house custom fabrication and the possibilities of modern technology.",
+  "pacing": {
+    "gradeBand": "Grade 1",
+    "curriculumUnit": "EL Education K-8 — Bird's Amazing Bodies (Feb–Apr) through Caring for Birds (–June)",
+    "seasonDateRange": "February–June",
+    "links": [
+      { "label": "D13 EL Education K-8 pacing sheet", "url": "https://docs.google.com/spreadsheets/d/1EKi1mmgL3YXokuLaGjKXk_XEvPkmIyKT/edit" },
+      { "label": "Pacing Reference (teacher assets)", "url": "https://drive.google.com/drive/folders/1Xkwpc9tF9_t2FwOP4p_kUoIJN4GaTcw8" }
+    ]
+  },
+  "purpose": [
+    "Supplement students' knowledge of bird diversity and anatomy in pace with the curriculum.",
+    "Foster creativity and imagination in design and decoration.",
+    "Develop design-process skills through creative planning and testing, and problem-solving through building.",
+    "Introduce engineering concepts with basic mechanical moving parts.",
+    "Spark interest in STEM fields via engaging hands-on experiences.",
+    "Familiarize students with in-house custom fabrication using laser-cut parts."
+  ],
+  "objectives": [
+    "Students will be able to construct a simple flapping bird using everyday materials and laser-cut parts.",
+    "Students will be able to design and decorate their birds creatively.",
+    "Students will be able to collaborate effectively with peers during the building process.",
+    "Students will be able to identify class representations of birds by their anatomical structures."
+  ],
+  "materials": {
+    "scaledForClasses": 2,
+    "scaledForStudents": 60,
+    "assetLinks": [
+      { "label": "Lesson Slides (bird sounds, design-process diagram)", "url": "https://docs.google.com/presentation/d/1xfujZJiLKMW1caOKBmvmGaDy9TDPZcii61jyb5NvCa0/edit" },
+      { "label": "Planning Worksheet (double-sided, 30 pg)", "url": "https://drive.google.com/file/d/1rnouDdXx_3ur421Q4owAhgVA1N9i0IDt/view" },
+      { "label": "Bird Bingo (player cards + facilitator references)", "url": "https://drive.google.com/file/d/1523rH11DWuJ0TtbDjIbOZ0yD5niL-ncB/view" },
+      { "label": "Laser-cut template kits (bodies, wings, attachments)", "url": "https://drive.google.com/file/d/15R9CtcMSMpg1Ja8-axuBocUse0seSGSy/view" },
+      { "label": "Feather Worksheet", "url": "https://drive.google.com/file/d/1WMoWeTgYw8fXQeRZmUR0vL32iGYfUU69/view" }
+    ],
+    "purchasing": [
+      { "item": "Skewers", "quantity": 30, "unit": "pc", "url": "https://a.co/d/avZVWW8" },
+      { "item": "Invisible Scotch tape", "quantity": 4, "unit": "rolls (4+)", "url": "" },
+      { "item": "Masking / painter's tape", "quantity": 4, "unit": "rolls (4+)", "url": "" },
+      { "item": "Heavy-duty staplers", "quantity": 4, "unit": "pc (4+)", "url": "" },
+      { "item": "Staples", "quantity": 1, "unit": "pack", "url": "" },
+      { "item": "Markers", "quantity": 288, "unit": "pc", "url": "" },
+      { "item": "Googly eyes", "quantity": 48, "unit": "styles", "url": "" }
+    ]
+  },
+  "classLeadPrep": [
+    { "text": "Maintain all laser-cut assets", "checked": false, "children": [
+      { "text": "Cardboard", "checked": false, "children": [
+        { "text": "Regular bodies x30", "checked": false },
+        { "text": "Long-neck bodies x30", "checked": false },
+        { "text": "Squat bodies x30", "checked": false }
+      ]},
+      { "text": "Paper", "checked": false, "children": [
+        { "text": "Wings x30", "checked": false },
+        { "text": "Strips x30", "checked": false }
+      ]}
+    ]},
+    { "text": "Print planning worksheets x30", "checked": false },
+    { "text": "Confirm Bird Bingo setup", "checked": false, "children": [
+      { "text": "Print bingo sheets for students x30", "checked": false },
+      { "text": "Bird references for leader at front of classroom", "checked": false }
+    ]},
+    { "text": "Gather markers for all tables in use", "checked": false },
+    { "text": "Gather all staplers and reload with staples", "checked": false },
+    { "text": "Gather invisible and masking tapes", "checked": false },
+    { "text": "Gather skewers/dowels for class x30", "checked": false },
+    { "text": "Googly eyes and additional decorations (cutouts, feathers, etc.)", "checked": false },
+    { "text": "(Day of) Load presentation and put up posters", "checked": false }
+  ],
+  "schedule": {
+    "startAnchor": "09:00",
+    "statedTotalMinutes": null,
+    "phases": [
+      { "name": "Introduction", "blocks": [
+        { "title": "Welcoming Circle", "duration": 10, "description": "Students introduce themselves. Instructors give an overview of NYC FIRST, its mission, and the STEM Center, and establish communal agreements. Connect to what students have learned about birds' bodies and introduce today's lesson.", "facilitationNote": "Tie directly back to the current curriculum unit on bird anatomy." },
+        { "title": "Bird Bingo", "duration": 20, "description": "A twist on bingo: the caller describes a random bird each round using the Bird Bingo Reference Deck (visual anatomy plus hints), and students must guess the bird before marking their card.", "facilitationNote": "Critical: support staff play 'the House' — pace the room, whisper birds to the caller to push the game forward, and ensure every child can score and at least one wins within the time." }
+      ]},
+      { "name": "Planning", "blocks": [
+        { "title": "Introduce the Design Process", "duration": 5, "description": "Introduce the design cycle. Keep it short and simple; remind students they can always improve their designs." },
+        { "title": "Sketching / Planning Phase", "duration": 10, "description": "Students plan their bird on the Sketch Worksheet.", "facilitationNote": "Keep it quick with time reminders; sketches need not be perfect. Struggling students can just pick marker colors and choose traits on the back. Play the bird-sounds video from the slides (no ad breaks) for calm background noise control." }
+      ]},
+      { "name": "Select and Color Parts", "blocks": [
+        { "title": "Color the Body Kit", "duration": 10, "description": "At the Gene Pool station, students select a body kit, put their name in the margin, and color the front (fold-line) side. Do not remove parts yet.", "facilitationNote": "If the wrong side is colored or halves break, help tape the body back together. Hand up when done → return to Gene Pool for wings." },
+        { "title": "Color the Wings Kit", "duration": 10, "description": "Students select a wing kit and color both sides (reveals the underside when flapping). Do not remove parts.", "facilitationNote": "Safeguard the flapping-mechanism strips on the sides of the sheet — do not remove or lose them." },
+        { "title": "Color Attachments", "duration": 10, "description": "Students select attachment kit(s) — beaks, feet — and color both sides. Do not remove parts until construction.", "facilitationNote": "Send students to the Gene Pool in manageable batches. Early finishers tidy the markers; keep bird parts in neat stacks." }
+      ]},
+      { "name": "Lunch", "blocks": [
+        { "title": "Lunch", "duration": 40, "description": "Students relax and break for lunch." }
+      ]},
+      { "name": "Construction", "blocks": [
+        { "title": "Introduce the Construction Phase", "duration": 10, "description": "Summarize the build for the class and recruit volunteers to help.", "detailedSteps": [
+          "Fold the body and insert a skewer handle, stapling it in place.",
+          "Attach the wings to the body and fold them so they flap.",
+          "Tape on the flapping-mechanism strips and tape them together around the handle.",
+          "Insert attachments into the body fold and staple; modulate beak length by pushing it in.",
+          "Add any additional attachments and feathers."
+        ], "facilitationNote": "Recruit support staff, teachers, and chaperones to help. The lead announces steps one at a time while supports assist." },
+        { "title": "Build the Bird", "duration": 50, "description": "Guided step-by-step construction.", "detailedSteps": [
+          "Fold the body & create a handle: remove body from kit, fold along the lines, insert a skewer (point in) to the 'X', keep it straight, and staple with two staples per side.",
+          "Fold the wings & tape to the body: centerfold the wings, place over the body (feather texture in back) aligned to the top-edge guidelines, fix with one tape strip per side above the fold line so they flap, then fold the tips up to match on the perforation.",
+          "Create the flapping mechanism: tape one strip per wing (tape hanging off one side), align each strip to the small triangle guide with wings folded up and tape up the wing, then line strips on the handle shaft and tape them together.",
+          "Add the attachments: place beaks/feet within the body fold and staple; push beaks in further to modulate length for the species."
+        ], "facilitationNote": "If time allows, students can cut cardstock for extra attachments or use the Feather Worksheet to decorate further." }
+      ]}
+    ]
+  },
+  "assessment": [
+    "Observation: instructors note collaboration, creativity, and engagement during construction.",
+    "Functionality check: students demonstrate their flapping bird and confirm all parts are attached and moving.",
+    "Reflection discussion: students articulate what they learned about building a first prototype and the design process, and describe their bird's body parts and why those adaptations exist."
+  ],
+  "skillsLearned": [
+    "Basic design-process concepts",
+    "Basic mechanical construction",
+    "Creative design and decoration",
+    "Problem-solving and troubleshooting",
+    "Teamwork and collaboration",
+    "Use of laser-cut materials",
+    "Understanding of bird traits and how to represent them"
+  ],
+  "photos": [],
+  "metadata": {
+    "author": "D13 STEM Center staff",
+    "editors": [],
+    "createdAt": "2025-02-01T09:00:00Z",
+    "updatedAt": "2025-02-01T09:00:00Z",
+    "status": "published",
+    "version": 1
+  }
+}
