@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/d13-app/offline/wifi-proposal/"> <!-- set-base.sh -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NYC FIRST · Staff 5G Network Proposal</title>
+<link rel="icon" href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNTAwIDUwMCI+CiAgPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDMwLjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDIuMS4xIEJ1aWxkIDEpICAtLT4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLnN0MCB7CiAgICAgICAgZmlsbDogIzIzMWYyMDsKICAgICAgfQoKICAgICAgLnN0MSB7CiAgICAgICAgZmlsbDogIzAwNjZiMzsKICAgICAgfQoKICAgICAgLnN0MiB7CiAgICAgICAgZmlsbDogI2VkMWMyNDsKICAgICAgfQoKICAgICAgLnN0MyB7CiAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgfQoKICAgICAgLnN0NCB7CiAgICAgICAgZmlsbDogIzk0OTM5MzsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGc+CiAgICA8cGF0aCBjbGFzcz0ic3Q0IiBkPSJNMjI3LjcsMTE5LjdjNC4yLDAsOC4yLjQsMTIuMSwxLjFsOS4yLTkuNmMtNi41LTIuMi0xMy43LTMuNS0yMS40LTMuNS0xMywwLTI0LjgsMy42LTMzLjYsOS41bDgsNy42YzcuNC0zLjMsMTYuMi01LjEsMjUuNi01LjEiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDMiIGQ9Ik0yMjcuNywxMDcuNmM3LjcsMCwxNC45LDEuMywyMS40LDMuNWwxMC0xMC40Yy05LjQtMy43LTIwLTUuOC0zMS40LTUuOC0xNi45LDAtMzIuNCw0LjctNDQuMSwxMi4zbDEwLjUsMTBjOC44LTUuOSwyMC42LTkuNSwzMy42LTkuNSIvPgogICAgPHBhdGggY2xhc3M9InN0NCIgZD0iTTE3OS42LDE0OC41Yy44LTMuNCwyLjQtNi43LDQuNi05LjdsLTQtNC4xYy0uOCwyLjUtMS4yLDUuMS0xLjIsNy44cy4zLDQuMS43LDYiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDQiIGQ9Ik0xNDkuNywxNzEuMWwtMS43LDguOCwxNi45LTcuM2MtMS4xLTIuMi0xLjMtNS4yLTEuOS03LjVsLTEzLjMsNloiLz4KICAgIDxwb2x5Z29uIGNsYXNzPSJzdDQiIHBvaW50cz0iMTM3LjggNzUuNCAxMTMuNCAyMDkuMyAxMjQuOSAyMTAuMiAxNDkuMSA3NC40IDEzNy44IDc1LjQiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0yMjAsMTUyLjV2LTEwLjhsLTE3LjctMTYuOC04LTcuNi0xMC41LTEwLTM0LjYtMzIuOC0yNC4yLDEzNS44LDUxLjItMjIuNWMtNS4xLTQuNS04LjctOS4zLTExLjQtMTVsLTE2LjcsNy4yLDEuNy04LjgsMTAuOC01Ni4zLjktNC43LDguOSw5LDExLjUsMTEuNiw0LjksNSwyMC4zLDE3LjUtMTkuNyw5YzUuMSw1LjEsMTEuMiw5LjYsMTkuMywxMi4xbDI0LjUtMTEtMTEuMi0xMC43WiIvPgogICAgPHBhdGggY2xhc3M9InN0NCIgZD0iTTI3NS45LDE0OC41Yy41LTIsLjctNCwuNy02LDAtNi0yLjItMTEuNy02LTE2LjdsLTUuOCw2YzUuNiw0LjcsOS42LDEwLjQsMTEuMSwxNi43Ii8+CiAgICA8cGF0aCBjbGFzcz0ic3Q0IiBkPSJNMjg2LjksMjA1LjhsLTEzLjgtMTMuM2MtMi4yLDEuNS00LjYsMi45LTcsNC4ybDIwLjgsMjAsNjQuMy02Ni45di0xMC44YzAsMC02NC4zLDY2LjktNjQuMyw2Ni45WiIvPgogICAgPHBhdGggY2xhc3M9InN0NCIgZD0iTTI0MCwxNjAuOGwtMTEuNC0xMC45LTguNy04LjN2MTAuOXMxMi4yLDExLjgsMTIuMiwxMS44bDExLjcsMTEuMmMzLS43LDUuOC0xLjcsOC41LTIuOGwtMTIuMy0xMS44WiIvPgogICAgPHBvbHlnb24gY2xhc3M9InN0NCIgcG9pbnRzPSIyODQuNyAxMDAuMyAyNzUuNiAxMDkuOCAyNjUuNSAxMjAuMyAyNTguNiAxMjcuNSAyNDUuNiAxNDEuMSAyNTEgMTQ2LjMgMjY0LjkgMTMxLjkgMjcwLjcgMTI1LjggMjgxLjMgMTE0LjggMjg0LjcgMTExLjIgMzIwLjEgMTQ1LjEgMzI1LjYgMTM5LjQgMjg0LjcgMTAwLjMiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDMiIGQ9Ik0yODEuMywxMTQuOGwtMTAuNiwxMS4xYzMuOCw1LDYsMTAuNiw2LDE2LjdzLS4zLDQuMS0uNyw2Yy0xLjIsNS4xLTQsOS44LTgsMTMuOS00LjEsNC4yLTkuNCw3LjctMTUuNiwxMC4zLTIuNywxLjEtNS41LDItOC41LDIuOC01LDEuMy0xMC41LDEuOS0xNi4xLDEuOXMtMTMuNi0xLTE5LjYtMi45Yy04LjItMi41LTE1LjItNi42LTIwLjMtMTEuNy0xLjktMS45LTMuNS0zLjktNC44LTYtMS42LTIuNi0yLjktNS40LTMuNi04LjMtLjUtMi0uNy00LS43LTZzLjQtNS4zLDEuMi03LjhsLTEyLjItMTIuNGMtNC41LDYuNi03LDE0LjEtNywyMnMuMiw0LC41LDZjLjgsNC44LDIuNSw5LjMsNSwxMy42LDEuMiwyLjEsMi43LDQuMiw0LjMsNi4yLDQuMyw1LjIsOS44LDkuNywxNi4zLDEzLjQsMTEuMyw2LjQsMjUuNCwxMC4yLDQwLjcsMTAuMnMyMC44LTEuOSwyOS44LTUuMmMyLjctMSw1LjMtMi4xLDcuOC0zLjQsNS44LTIuOSwxMC45LTYuNSwxNS4yLTEwLjYsNy4yLTYuOSwxMi0xNS4yLDEzLjUtMjQuMi4zLTIsLjUtNCwuNS02LDAtMTEuMS00LjktMjEuMy0xMy4zLTI5LjYiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0yNDAsMTYwLjlsMTIuMywxMS44YzYuMi0yLjYsMTEuNS02LDE1LjYtMTAuMmwtMTYuOC0xNi4yLTUuNS01LjIsMTMtMTMuNSw2LjktNy4yLDEwLjEtMTAuNSw5LjItOS41LDQwLjcsMzkuMS01LjUsNS43LTMzLjQsMzQuN2MtMy41LDQuOC04LjEsOS4xLTEzLjUsMTIuOGwxMy43LDEzLjIsNjQuMy02Ni45LTY2LjktNjQuMy0yNS4xLDI2LjEtMTAsMTAuNC05LjIsOS42LTE5LjgsMjAuOCwyMCwxOS4zWiIvPgogICAgPHBhdGggY2xhc3M9InN0NCIgZD0iTTE4My40LDE1Ny4xcy4zLjUuNC42YzEsMS42LDIuMywzLDMuNiw0LjRsMjAtOS4yLTQ2LTQyLjgtMS4zLDYuNiwzNi4xLDM1LjctMTIuOCw0LjdaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3Q0IiBkPSJNMjk0LjYsMTQ0LjNjMCwyLS4yLDQtLjUsNi0xLjUsOS4xLTYuMywxNy40LTEzLjUsMjQuMi00LjMsNC4xLTkuNCw3LjctMTUuMiwxMC42LTIuNSwxLjMtNS4xLDIuNC03LjgsMy40LTksMy4zLTE5LjEsNS4yLTI5LjgsNS4yLTE1LjMsMC0yOS40LTMuOC00MC43LTEwLjItNi41LTMuNy0xMi04LjItMTYuMy0xMy40LTEuNi0yLTMuMS00LTQuMy02LjItMi41LTQuMy00LjItOC44LTUtMTMuNi0uMy0yLS41LTQtLjUtNnMwLTEuMywwLTEuOWMwLDAsMCwwLDAtLjEtLjMsMiwwLDEyLDAsMTQsMCwzLjIuNCw2LjQsMS4yLDkuNC42LDIuNCwxLjUsNC43LDIuNSw2LjksMi43LDUuNyw2LjcsMTAuOCwxMS44LDE1LjQsMTIuMywxMC44LDMwLjcsMTcuNyw1MS4zLDE3LjdzMjcuNS0zLjMsMzguNC05YzIuNS0xLjMsNC44LTIuNyw3LTQuMiw1LjQtMy43LDEwLTgsMTMuNS0xMi44LDUuMS03LDgtMTUsOC0yMy40cy4yLTEwLjMsMC0xMy42YzAtLjUsMCwxLDAsMS42Ii8+CiAgPC9nPgogIDxnPgogICAgPHBvbHlnb24gY2xhc3M9InN0MCIgcG9pbnRzPSI4Ny45IDMzMi41IDE1MC45IDMzMi41IDE0NSAzNTYuNyAxMTQuOCAzNTYuNyAxMTEuOCAzNjkuNSAxNDMuMyAzNjkuNSAxMzcuOCAzOTIgMTA2LjcgMzkyIDk5LjMgNDIzLjkgNjYuNyA0MjMuOSA4Ny45IDMzMi41Ii8+CiAgICA8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjE1OS41IDMzMi41IDE5MiAzMzIuNSAxNzAuOCA0MjMuOSAxMzguMyA0MjMuOSAxNTkuNSAzMzIuNSIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTIwMC41LDMzM2wyLjEtLjNjMTAuNC0xLjIsMjMuNC0yLjEsMzAuNi0yLjEsMTEuOSwwLDIxLjIsMS40LDI4LjIsNC4yLDksMy43LDE0LjMsMTEuOCwxNC4zLDIxLjVzLTIuOCwxNi4zLTguMiwyMi41Yy00LjYsNS4zLTguOCw3LjktMTcuNSwxMC42bC0yLjEuN2MuOS43LDEuMiwxLDEuNiwxLjQsMi41LDIuOSwxMC4yLDE3LjcsMTYuNiwzMi4zaC0zNS44Yy00LjYtMTMtNi0xNi40LTEyLjEtMzEuMmwtNy4yLDMxLjJoLTMxLjZsMjEtOTAuOVpNMjI0LjYsMzc2LjFjMTAuNCwwLDE3LjgtNi4yLDE3LjgtMTQuOXMtMy40LTctMTAuMi03LTMsLjEtNS4xLjVsLTQuOSwyMS4xYzEsLjEsMS4yLjMsMi40LjMiLz4KICAgIDxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMzUzIDMzMi41IDQzMiAzMzIuNSA0MjYuNSAzNTguOSA0MDMgMzU4LjkgMzg3LjUgNDIzLjkgMzU1IDQyMy45IDM3MC41IDM1OC45IDM0NS4xIDM1OC45IDM1MyAzMzIuNSIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTQwMi44LDQwNy42YzQuNCwwLDcuOSwzLjUsNy45LDcuOXMtMy41LDcuOS03LjksNy45LTcuOS0zLjUtNy45LTcuOSwzLjUtNy45LDcuOS03LjlNNDAyLjgsNDIyLjRjMy45LDAsNy0zLjEsNy02LjlzLTMuMS03LTctNy02LjksMy4xLTYuOSw2LjksMy4xLDcsNi45LDdNMzk5LjcsNDExLjRjLjQsMCwuNSwwLDEuMy0uMS44LDAsMS4xLDAsMS41LDAsMi42LDAsMy45LDEsMy45LDIuOXMtLjUsMS45LTEuNSwyLjNoLS4xYzAsMCwuMS4xLjIuMi4zLjIsMS4yLDEuNiwyLDIuOWgtM2MtLjYtMS4xLS44LTEuNC0xLjYtMi43djIuN2gtMi41di04LjFaTTQwMi41LDQxNS4yYy43LDAsMS4xLS4zLDEuMS0xcy0uNC0xLTEuMS0xLS4yLDAtLjMsMHYxLjljLjEsMCwuMiwwLC4zLDAiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yNjkuNCw0MjEuNmM5LjEsMi43LDE5LjIsNC4yLDI4LjUsNC4yczIyLjQtMi45LDMwLjgtOC45YzkuMy02LjYsMTUuMi0xNi43LDE1LjItMjUuOXMtMi43LTExLjgtNy41LTE1LjhjLTMuNy0zLTcuNi01LjMtMTUuNS05bC02LjQtM2MtMi4xLTEuMS0zLjEtMi4yLTMuMS0zLjQsMC0zLjMsNC4yLTUuOCw5LjktNS44czkuMywxLjIsMTksNC40bDYuNy0yNC43Yy03LjItMi0xNC4zLTIuOS0yMS4zLTIuOS0yNi42LDAtNDcsMTQuNS00NywzMy4zczYuNiwxNi45LDIzLDI0LjVjNy44LDMuNiw5LjEsNC41LDkuMSw3LDAsMy43LTQsNi0xMC42LDZzLTEzLjMtMS44LTIzLjQtNS41aDBzLTcuMSwyNS41LTcuMSwyNS41WiIvPgogIDwvZz4KICA8Zz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNzQuNSwyMzIuOWgyNy44Yy02LjYsMzAuOC0xMy4xLDYxLjUtMTkuNyw5Mi4yaC0yNmMtOS43LTE2LjQtMTkuMy0zMi45LTI4LjMtNDkuOC0zLjYsMTYuNy03LjEsMzMuMi0xMC42LDQ5LjhoLTI3LjljNi42LTMwLjgsMTMuMS02MS41LDE5LjctOTIuMmgyNi45YzkuOSwxNi42LDE5LjQsMzMuNSwyOC4zLDUwLjgsMi43LTE3LjEsNi4xLTMzLjksMTAtNTAuOFoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0zNzEuMywyMzUuNmMtNC4xLDguNi04LjIsMTcuMi0xMi40LDI1LjgtMS41LS40LTMtLjctNC40LTEtMi43LS42LTUuNC0xLjItOC4xLTEuNi00LjMtLjctOC41LDAtMTIuNSwxLjUtNy41LDIuOS0xMyw4LTE1LjgsMTUuNi0xLjQsMy45LTEuNyw3LjktLjgsMTEuOSwxLjEsNS4xLDQuMyw4LjQsOSwxMC4zLDMuOCwxLjUsNy44LDEuOCwxMS44LDEuNSw0LjgtLjQsOS40LTEuNiwxNC0zLjIuMiwwLC41LS4yLjctLjIsMCwwLC4yLDAsLjUsMC0xLjgsOS0zLjgsMTcuOS01LjYsMjYuOS0uMy4xLS42LjItLjkuMy03LjEsMi4yLTE0LjMsMy42LTIxLjgsMy43LTYuNS4xLTEyLjktLjUtMTktMi45LTExLjMtNC40LTE4LjEtMTIuNS0yMC42LTI0LjQtMS00LjctMS05LjQtLjctMTQuMiwxLTEyLjcsNS45LTIzLjcsMTQuNC0zMy4yLDUuNy02LjMsMTIuMS0xMS41LDE5LjgtMTUuMiw1LjYtMi43LDExLjUtNC41LDE3LjYtNS40LDUuNS0uOCwxMS4xLS45LDE2LjYtLjQsNiwuNSwxMS44LDEuOSwxNy41LDMuOS4yLDAsLjMuMi42LjNaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjQxLjMsMzI1LjFoLTMxLjZjLjMtLjUuNi0uOS44LTEuMyw1LjctOC4xLDExLjUtMTYuMywxNy4yLTI0LjQuNi0uOC42LTEuNC4zLTIuMy03LTIxLTE0LjEtNDItMjEuMS02My0uMS0uNC0uMi0uNy0uNC0xLjJoMzEuM2M0LjEsMTIuNSw3LjgsMjUuMywxMS4xLDM4LjEsOC4xLTEzLDE2LjYtMjUuNywyNS41LTM4LjFoMzBjLS40LjUtLjYsMS0uOSwxLjQtMTMuNywxOS41LTI3LjMsMzguOS00MSw1OC40LTYuNSw5LjItMTIuNiwxOC44LTE4LjcsMjguMy0uOSwxLjQtMS44LDIuOC0yLjcsNC4yWiIvPgogIDwvZz4KPC9zdmc+">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E8EFF8;--surface:#fff;--surface-2:#EDF2FA;--rule:#CDDAEE;--rule-2:#B8CCEA;
+  --ink:#0F1117;--ink-2:#3A3D45;--ink-3:#6B6F7A;--muted:#9DA1AC;
+  --accent:#E0241B;--accent-soft:#FEF0EF;--blue:#2563EB;--blue-soft:#DCE8FC;
+  --green:#047857;--green-soft:#D1FAE5;--amber:#92400E;--amber-soft:#FEF3C7;
+  --sh-1:0 1px 2px rgba(15,17,23,.05),0 1px 4px rgba(15,17,23,.04);
+  --sh-2:0 2px 8px -2px rgba(15,17,23,.08),0 1px 2px rgba(15,17,23,.04);
+  --r-sm:8px;--r-md:10px;--r-pill:999px;
+  --font-sans:'Geist',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-mono:'Geist Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  --logo:url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNTAwIDUwMCI+CiAgPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDMwLjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDIuMS4xIEJ1aWxkIDEpICAtLT4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLnN0MCB7CiAgICAgICAgZmlsbDogIzIzMWYyMDsKICAgICAgfQoKICAgICAgLnN0MSB7CiAgICAgICAgZmlsbDogIzAwNjZiMzsKICAgICAgfQoKICAgICAgLnN0MiB7CiAgICAgICAgZmlsbDogI2VkMWMyNDsKICAgICAgfQoKICAgICAgLnN0MyB7CiAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgfQoKICAgICAgLnN0NCB7CiAgICAgICAgZmlsbDogIzk0OTM5MzsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGc+CiAgICA8cGF0aCBjbGFzcz0ic3Q0IiBkPSJNMjI3LjcsMTE5LjdjNC4yLDAsOC4yLjQsMTIuMSwxLjFsOS4yLTkuNmMtNi41LTIuMi0xMy43LTMuNS0yMS40LTMuNS0xMywwLTI0LjgsMy42LTMzLjYsOS41bDgsNy42YzcuNC0zLjMsMTYuMi01LjEsMjUuNi01LjEiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDMiIGQ9Ik0yMjcuNywxMDcuNmM3LjcsMCwxNC45LDEuMywyMS40LDMuNWwxMC0xMC40Yy05LjQtMy43LTIwLTUuOC0zMS40LTUuOC0xNi45LDAtMzIuNCw0LjctNDQuMSwxMi4zbDEwLjUsMTBjOC44LTUuOSwyMC42LTkuNSwzMy42LTkuNSIvPgogICAgPHBhdGggY2xhc3M9InN0NCIgZD0iTTE3OS42LDE0OC41Yy44LTMuNCwyLjQtNi43LDQuNi05LjdsLTQtNC4xYy0uOCwyLjUtMS4yLDUuMS0xLjIsNy44cy4zLDQuMS43LDYiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDQiIGQ9Ik0xNDkuNywxNzEuMWwtMS43LDguOCwxNi45LTcuM2MtMS4xLTIuMi0xLjMtNS4yLTEuOS03LjVsLTEzLjMsNloiLz4KICAgIDxwb2x5Z29uIGNsYXNzPSJzdDQiIHBvaW50cz0iMTM3LjggNzUuNCAxMTMuNCAyMDkuMyAxMjQuOSAyMTAuMiAxNDkuMSA3NC40IDEzNy44IDc1LjQiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0yMjAsMTUyLjV2LTEwLjhsLTE3LjctMTYuOC04LTcuNi0xMC41LTEwLTM0LjYtMzIuOC0yNC4yLDEzNS44LDUxLjItMjIuNWMtNS4xLTQuNS04LjctOS4zLTExLjQtMTVsLTE2LjcsNy4yLDEuNy04LjgsMTAuOC01Ni4zLjktNC43LDguOSw5LDExLjUsMTEuNiw0LjksNSwyMC4zLDE3LjUtMTkuNyw5YzUuMSw1LjEsMTEuMiw5LjYsMTkuMywxMi4xbDI0LjUtMTEtMTEuMi0xMC43WiIvPgogICAgPHBhdGggY2xhc3M9InN0NCIgZD0iTTI3NS45LDE0OC41Yy41LTIsLjctNCwuNy02LDAtNi0yLjItMTEuNy02LTE2LjdsLTUuOCw2YzUuNiw0LjcsOS42LDEwLjQsMTEuMSwxNi43Ii8+CiAgICA8cGF0aCBjbGFzcz0ic3Q0IiBkPSJNMjg2LjksMjA1LjhsLTEzLjgtMTMuM2MtMi4yLDEuNS00LjYsMi45LTcsNC4ybDIwLjgsMjAsNjQuMy02Ni45di0xMC44YzAsMC02NC4zLDY2LjktNjQuMyw2Ni45WiIvPgogICAgPHBhdGggY2xhc3M9InN0NCIgZD0iTTI0MCwxNjAuOGwtMTEuNC0xMC45LTguNy04LjN2MTAuOXMxMi4yLDExLjgsMTIuMiwxMS44bDExLjcsMTEuMmMzLS43LDUuOC0xLjcsOC41LTIuOGwtMTIuMy0xMS44WiIvPgogICAgPHBvbHlnb24gY2xhc3M9InN0NCIgcG9pbnRzPSIyODQuNyAxMDAuMyAyNzUuNiAxMDkuOCAyNjUuNSAxMjAuMyAyNTguNiAxMjcuNSAyNDUuNiAxNDEuMSAyNTEgMTQ2LjMgMjY0LjkgMTMxLjkgMjcwLjcgMTI1LjggMjgxLjMgMTE0LjggMjg0LjcgMTExLjIgMzIwLjEgMTQ1LjEgMzI1LjYgMTM5LjQgMjg0LjcgMTAwLjMiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDMiIGQ9Ik0yODEuMywxMTQuOGwtMTAuNiwxMS4xYzMuOCw1LDYsMTAuNiw2LDE2LjdzLS4zLDQuMS0uNyw2Yy0xLjIsNS4xLTQsOS44LTgsMTMuOS00LjEsNC4yLTkuNCw3LjctMTUuNiwxMC4zLTIuNywxLjEtNS41LDItOC41LDIuOC01LDEuMy0xMC41LDEuOS0xNi4xLDEuOXMtMTMuNi0xLTE5LjYtMi45Yy04LjItMi41LTE1LjItNi42LTIwLjMtMTEuNy0xLjktMS45LTMuNS0zLjktNC44LTYtMS42LTIuNi0yLjktNS40LTMuNi04LjMtLjUtMi0uNy00LS43LTZzLjQtNS4zLDEuMi03LjhsLTEyLjItMTIuNGMtNC41LDYuNi03LDE0LjEtNywyMnMuMiw0LC41LDZjLjgsNC44LDIuNSw5LjMsNSwxMy42LDEuMiwyLjEsMi43LDQuMiw0LjMsNi4yLDQuMyw1LjIsOS44LDkuNywxNi4zLDEzLjQsMTEuMyw2LjQsMjUuNCwxMC4yLDQwLjcsMTAuMnMyMC44LTEuOSwyOS44LTUuMmMyLjctMSw1LjMtMi4xLDcuOC0zLjQsNS44LTIuOSwxMC45LTYuNSwxNS4yLTEwLjYsNy4yLTYuOSwxMi0xNS4yLDEzLjUtMjQuMi4zLTIsLjUtNCwuNS02LDAtMTEuMS00LjktMjEuMy0xMy4zLTI5LjYiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0yNDAsMTYwLjlsMTIuMywxMS44YzYuMi0yLjYsMTEuNS02LDE1LjYtMTAuMmwtMTYuOC0xNi4yLTUuNS01LjIsMTMtMTMuNSw2LjktNy4yLDEwLjEtMTAuNSw5LjItOS41LDQwLjcsMzkuMS01LjUsNS43LTMzLjQsMzQuN2MtMy41LDQuOC04LjEsOS4xLTEzLjUsMTIuOGwxMy43LDEzLjIsNjQuMy02Ni45LTY2LjktNjQuMy0yNS4xLDI2LjEtMTAsMTAuNC05LjIsOS42LTE5LjgsMjAuOCwyMCwxOS4zWiIvPgogICAgPHBhdGggY2xhc3M9InN0NCIgZD0iTTE4My40LDE1Ny4xcy4zLjUuNC42YzEsMS42LDIuMywzLDMuNiw0LjRsMjAtOS4yLTQ2LTQyLjgtMS4zLDYuNiwzNi4xLDM1LjctMTIuOCw0LjdaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3Q0IiBkPSJNMjk0LjYsMTQ0LjNjMCwyLS4yLDQtLjUsNi0xLjUsOS4xLTYuMywxNy40LTEzLjUsMjQuMi00LjMsNC4xLTkuNCw3LjctMTUuMiwxMC42LTIuNSwxLjMtNS4xLDIuNC03LjgsMy40LTksMy4zLTE5LjEsNS4yLTI5LjgsNS4yLTE1LjMsMC0yOS40LTMuOC00MC43LTEwLjItNi41LTMuNy0xMi04LjItMTYuMy0xMy40LTEuNi0yLTMuMS00LTQuMy02LjItMi41LTQuMy00LjItOC44LTUtMTMuNi0uMy0yLS41LTQtLjUtNnMwLTEuMywwLTEuOWMwLDAsMCwwLDAtLjEtLjMsMiwwLDEyLDAsMTQsMCwzLjIuNCw2LjQsMS4yLDkuNC42LDIuNCwxLjUsNC43LDIuNSw2LjksMi43LDUuNyw2LjcsMTAuOCwxMS44LDE1LjQsMTIuMywxMC44LDMwLjcsMTcuNyw1MS4zLDE3LjdzMjcuNS0zLjMsMzguNC05YzIuNS0xLjMsNC44LTIuNyw3LTQuMiw1LjQtMy43LDEwLTgsMTMuNS0xMi44LDUuMS03LDgtMTUsOC0yMy40cy4yLTEwLjMsMC0xMy42YzAtLjUsMCwxLDAsMS42Ii8+CiAgPC9nPgogIDxnPgogICAgPHBvbHlnb24gY2xhc3M9InN0MCIgcG9pbnRzPSI4Ny45IDMzMi41IDE1MC45IDMzMi41IDE0NSAzNTYuNyAxMTQuOCAzNTYuNyAxMTEuOCAzNjkuNSAxNDMuMyAzNjkuNSAxMzcuOCAzOTIgMTA2LjcgMzkyIDk5LjMgNDIzLjkgNjYuNyA0MjMuOSA4Ny45IDMzMi41Ii8+CiAgICA8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjE1OS41IDMzMi41IDE5MiAzMzIuNSAxNzAuOCA0MjMuOSAxMzguMyA0MjMuOSAxNTkuNSAzMzIuNSIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTIwMC41LDMzM2wyLjEtLjNjMTAuNC0xLjIsMjMuNC0yLjEsMzAuNi0yLjEsMTEuOSwwLDIxLjIsMS40LDI4LjIsNC4yLDksMy43LDE0LjMsMTEuOCwxNC4zLDIxLjVzLTIuOCwxNi4zLTguMiwyMi41Yy00LjYsNS4zLTguOCw3LjktMTcuNSwxMC42bC0yLjEuN2MuOS43LDEuMiwxLDEuNiwxLjQsMi41LDIuOSwxMC4yLDE3LjcsMTYuNiwzMi4zaC0zNS44Yy00LjYtMTMtNi0xNi40LTEyLjEtMzEuMmwtNy4yLDMxLjJoLTMxLjZsMjEtOTAuOVpNMjI0LjYsMzc2LjFjMTAuNCwwLDE3LjgtNi4yLDE3LjgtMTQuOXMtMy40LTctMTAuMi03LTMsLjEtNS4xLjVsLTQuOSwyMS4xYzEsLjEsMS4yLjMsMi40LjMiLz4KICAgIDxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMzUzIDMzMi41IDQzMiAzMzIuNSA0MjYuNSAzNTguOSA0MDMgMzU4LjkgMzg3LjUgNDIzLjkgMzU1IDQyMy45IDM3MC41IDM1OC45IDM0NS4xIDM1OC45IDM1MyAzMzIuNSIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTQwMi44LDQwNy42YzQuNCwwLDcuOSwzLjUsNy45LDcuOXMtMy41LDcuOS03LjksNy45LTcuOS0zLjUtNy45LTcuOSwzLjUtNy45LDcuOS03LjlNNDAyLjgsNDIyLjRjMy45LDAsNy0zLjEsNy02LjlzLTMuMS03LTctNy02LjksMy4xLTYuOSw2LjksMy4xLDcsNi45LDdNMzk5LjcsNDExLjRjLjQsMCwuNSwwLDEuMy0uMS44LDAsMS4xLDAsMS41LDAsMi42LDAsMy45LDEsMy45LDIuOXMtLjUsMS45LTEuNSwyLjNoLS4xYzAsMCwuMS4xLjIuMi4zLjIsMS4yLDEuNiwyLDIuOWgtM2MtLjYtMS4xLS44LTEuNC0xLjYtMi43djIuN2gtMi41di04LjFaTTQwMi41LDQxNS4yYy43LDAsMS4xLS4zLDEuMS0xcy0uNC0xLTEuMS0xLS4yLDAtLjMsMHYxLjljLjEsMCwuMiwwLC4zLDAiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yNjkuNCw0MjEuNmM5LjEsMi43LDE5LjIsNC4yLDI4LjUsNC4yczIyLjQtMi45LDMwLjgtOC45YzkuMy02LjYsMTUuMi0xNi43LDE1LjItMjUuOXMtMi43LTExLjgtNy41LTE1LjhjLTMuNy0zLTcuNi01LjMtMTUuNS05bC02LjQtM2MtMi4xLTEuMS0zLjEtMi4yLTMuMS0zLjQsMC0zLjMsNC4yLTUuOCw5LjktNS44czkuMywxLjIsMTksNC40bDYuNy0yNC43Yy03LjItMi0xNC4zLTIuOS0yMS4zLTIuOS0yNi42LDAtNDcsMTQuNS00NywzMy4zczYuNiwxNi45LDIzLDI0LjVjNy44LDMuNiw5LjEsNC41LDkuMSw3LDAsMy43LTQsNi0xMC42LDZzLTEzLjMtMS44LTIzLjQtNS41aDBzLTcuMSwyNS41LTcuMSwyNS41WiIvPgogIDwvZz4KICA8Zz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNzQuNSwyMzIuOWgyNy44Yy02LjYsMzAuOC0xMy4xLDYxLjUtMTkuNyw5Mi4yaC0yNmMtOS43LTE2LjQtMTkuMy0zMi45LTI4LjMtNDkuOC0zLjYsMTYuNy03LjEsMzMuMi0xMC42LDQ5LjhoLTI3LjljNi42LTMwLjgsMTMuMS02MS41LDE5LjctOTIuMmgyNi45YzkuOSwxNi42LDE5LjQsMzMuNSwyOC4zLDUwLjgsMi43LTE3LjEsNi4xLTMzLjksMTAtNTAuOFoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0zNzEuMywyMzUuNmMtNC4xLDguNi04LjIsMTcuMi0xMi40LDI1LjgtMS41LS40LTMtLjctNC40LTEtMi43LS42LTUuNC0xLjItOC4xLTEuNi00LjMtLjctOC41LDAtMTIuNSwxLjUtNy41LDIuOS0xMyw4LTE1LjgsMTUuNi0xLjQsMy45LTEuNyw3LjktLjgsMTEuOSwxLjEsNS4xLDQuMyw4LjQsOSwxMC4zLDMuOCwxLjUsNy44LDEuOCwxMS44LDEuNSw0LjgtLjQsOS40LTEuNiwxNC0zLjIuMiwwLC41LS4yLjctLjIsMCwwLC4yLDAsLjUsMC0xLjgsOS0zLjgsMTcuOS01LjYsMjYuOS0uMy4xLS42LjItLjkuMy03LjEsMi4yLTE0LjMsMy42LTIxLjgsMy43LTYuNS4xLTEyLjktLjUtMTktMi45LTExLjMtNC40LTE4LjEtMTIuNS0yMC42LTI0LjQtMS00LjctMS05LjQtLjctMTQuMiwxLTEyLjcsNS45LTIzLjcsMTQuNC0zMy4yLDUuNy02LjMsMTIuMS0xMS41LDE5LjgtMTUuMiw1LjYtMi43LDExLjUtNC41LDE3LjYtNS40LDUuNS0uOCwxMS4xLS45LDE2LjYtLjQsNiwuNSwxMS44LDEuOSwxNy41LDMuOS4yLDAsLjMuMi42LjNaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjQxLjMsMzI1LjFoLTMxLjZjLjMtLjUuNi0uOS44LTEuMyw1LjctOC4xLDExLjUtMTYuMywxNy4yLTI0LjQuNi0uOC42LTEuNC4zLTIuMy03LTIxLTE0LjEtNDItMjEuMS02My0uMS0uNC0uMi0uNy0uNC0xLjJoMzEuM2M0LjEsMTIuNSw3LjgsMjUuMywxMS4xLDM4LjEsOC4xLTEzLDE2LjYtMjUuNywyNS41LTM4LjFoMzBjLS40LjUtLjYsMS0uOSwxLjQtMTMuNywxOS41LTI3LjMsMzguOS00MSw1OC40LTYuNSw5LjItMTIuNiwxOC44LTE4LjcsMjguMy0uOSwxLjQtMS44LDIuOC0yLjcsNC4yWiIvPgogIDwvZz4KPC9zdmc+");
+  --o1:#6B8FD6;--o2:#E0241B;--o3:#9DA1AC;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(37,99,235,.25)}
+a:hover{border-bottom-color:var(--blue)}
+.mono{font-family:var(--font-mono)}
+
+/* topbar */
+.topbar{background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);box-shadow:var(--sh-1);padding:0 32px;height:56px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:20}
+.topbar-logo{display:block;width:34px;height:34px;background:var(--logo) center/contain no-repeat;border:none}
+.topbar-divider{width:1px;height:20px;background:var(--rule)}
+.topbar-label{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase}
+.topbar-ask{margin-left:auto;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.04em;color:var(--accent);background:var(--accent-soft);border:1px solid rgba(224,36,27,.2);border-radius:var(--r-pill);padding:3px 11px;white-space:nowrap}
+
+/* header */
+.hdr{max-width:1180px;margin:0 auto;padding:56px 48px 40px}
+.hdr-logo{width:60px;height:60px;background:var(--logo) center/contain no-repeat;margin-bottom:20px}
+.eyebrow{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.pulse-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 2.4s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){.pulse-dot{animation:none}html{scroll-behavior:auto}}
+.hdr h1{font-size:38px;font-weight:700;letter-spacing:-.025em;line-height:1.12;text-wrap:balance;margin-bottom:14px}
+.hdr h1 em{font-style:normal;color:var(--accent)}
+.hdr-desc{color:var(--ink-3);font-size:15px;max-width:680px;line-height:1.65;margin-bottom:24px}
+.badges{display:flex;gap:6px;flex-wrap:wrap}
+.badge{padding:3px 10px;border-radius:var(--r-pill);font-family:var(--font-mono);font-size:10.5px;letter-spacing:.04em;border:1px solid;white-space:nowrap}
+.b-accent{color:var(--accent);border-color:rgba(224,36,27,.2);background:var(--accent-soft)}
+.b-blue{color:var(--blue);border-color:rgba(37,99,235,.2);background:var(--blue-soft)}
+.b-green{color:var(--green);border-color:rgba(4,120,87,.2);background:var(--green-soft)}
+.b-amber{color:var(--amber);border-color:rgba(146,64,14,.2);background:var(--amber-soft)}
+
+/* KPI tiles */
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.kpi{background:var(--surface);border:1px solid var(--rule);border-radius:var(--r-md);padding:16px 18px;box-shadow:var(--sh-1)}
+.kpi-l{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.kpi-v{font-size:26px;font-weight:700;letter-spacing:-.02em;margin-top:4px;font-variant-numeric:tabular-nums}
+.kpi-s{font-size:12px;color:var(--ink-3)}
+.kpi.hot{border-top:3px solid var(--accent)}
+
+main{min-width:0}
+hr.div{border:none;border-top:1px solid var(--rule)}
+
+/* layout */
+.shell{max-width:1180px;margin:0 auto;padding:0 48px 80px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:40px;align-items:start}
+.toc{position:sticky;top:76px;background:var(--surface);border:1px solid var(--rule);border-radius:var(--r-md);box-shadow:var(--sh-2);overflow:hidden;margin-top:44px}
+.toc-head{padding:10px 14px;border-bottom:1px solid var(--rule);font-family:var(--font-mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:var(--surface-2)}
+.toc a{display:block;padding:6px 14px;font-size:12px;color:var(--ink-2);border:none;border-left:2px solid transparent;line-height:1.35}
+.toc a:hover{background:var(--surface-2);color:var(--ink);border-left-color:var(--rule-2)}
+.toc a.on{color:var(--accent);border-left-color:var(--accent);background:var(--accent-soft)}
+.toc a span{font-family:var(--font-mono);font-size:9.5px;color:var(--muted);margin-right:7px}
+
+.section{padding:44px 0 4px;scroll-margin-top:72px}
+.sec-eye{font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.sec-title{font-size:22px;font-weight:650;letter-spacing:-.018em;margin-bottom:8px;text-wrap:balance}
+.sec-lede{color:var(--ink-3);font-size:13.5px;max-width:680px;margin-bottom:24px}
+h3.sub{font-size:14px;font-weight:600;margin:28px 0 10px}
+p.body{font-size:13.5px;color:var(--ink-2);max-width:740px;margin-bottom:12px}
+
+.rule-box{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--accent);border-radius:var(--r-md);padding:16px 20px;box-shadow:var(--sh-1);margin-bottom:20px}
+.rb-blue{border-left-color:var(--blue)}.rb-green{border-left-color:var(--green)}
+.rb-amber{border-left-color:var(--amber);background:#FFFBEB;border-color:rgba(146,64,14,.15)}
+.rule-lbl{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.rule-txt{font-size:14.5px;font-weight:600;line-height:1.45}
+.rule-sub{font-size:12.5px;color:var(--ink-3);margin-top:5px;line-height:1.5}
+
+ul.det{list-style:none;display:flex;flex-direction:column;gap:9px;max-width:760px}
+ul.det>li{position:relative;padding-left:17px;font-size:13.5px;color:var(--ink-2);line-height:1.55}
+ul.det>li::before{content:'';position:absolute;left:3px;top:8px;width:5px;height:5px;border-radius:50%;background:var(--rule-2)}
+ul.det strong{color:var(--ink);font-weight:600}
+
+/* tables */
+.tbl-wrap{background:var(--surface);border:1px solid var(--rule);border-radius:var(--r-md);overflow-x:auto;box-shadow:var(--sh-2);margin-bottom:10px}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;padding:10px 14px;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--surface-2);border-bottom:1px solid var(--rule);font-weight:500;white-space:nowrap}
+td{padding:11px 14px;font-size:13px;color:var(--ink-2);border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.5}
+tr:last-child td{border-bottom:none}
+td strong{color:var(--ink)}
+td.num,th.num{text-align:right;font-family:var(--font-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.total td{background:var(--surface-2);font-weight:600;color:var(--ink)}
+tr.rec td{background:#FFF7F6}
+.strike{text-decoration:line-through;color:var(--muted)}
+.fix{color:var(--accent);font-weight:600}
+
+/* vendor subscript links */
+sub.v{font-size:10px;vertical-align:sub;margin-left:3px;white-space:nowrap}
+sub.v a{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.02em;color:var(--blue);border:none;padding:0 1px}
+sub.v a:hover{text-decoration:underline}
+sub.v a+a::before{content:'· ';color:var(--muted)}
+
+/* chips */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 18px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--rule);border-radius:var(--r-pill);padding:5px 12px;font-size:12.5px;box-shadow:var(--sh-1)}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block}
+.chip.warn i{background:#D97706}
+.chip a{border:none;color:var(--ink)}
+
+
+/* figure */
+figure.fig{background:var(--surface);border:1px solid var(--rule);border-radius:var(--r-md);box-shadow:var(--sh-2);padding:18px;margin:4px 0 18px}
+figure.fig svg{width:100%;height:auto;display:block}
+figcaption{font-size:12px;color:var(--ink-3);margin-top:10px}
+
+/* option cards */
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:18px}
+.opt{background:var(--surface);border:1px solid var(--rule);border-radius:var(--r-md);padding:16px;box-shadow:var(--sh-1);display:flex;flex-direction:column;gap:8px}
+.opt.rec{border:2px solid var(--accent);box-shadow:0 6px 24px -10px rgba(224,36,27,.35)}
+.opt-tag{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.opt.rec .opt-tag{color:var(--accent)}
+.opt h4{font-size:15px;line-height:1.3}
+.opt-price{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:8px;font-size:24px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.opt-price small{font-size:12px;font-weight:400;color:var(--ink-3)}
+.opt ul{list-style:none;font-size:12.5px;color:var(--ink-2);display:flex;flex-direction:column;gap:4px}
+.opt li::before{content:'→ ';color:var(--muted)}
+.opt li.warn{color:var(--accent);font-weight:600}
+.opt li.good{color:var(--green);font-weight:600}
+.opt li.warn::before,.opt li.good::before{color:inherit}
+.opt-bot{margin-top:auto;padding-top:8px;border-top:1px solid var(--rule)}
+.opt-bot li{min-height:3.2em}
+/* selectable cards: native radios, no JS */
+.opt{cursor:pointer;transition:border-color .2s,box-shadow .2s}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt:hover{border-color:var(--ink-3)}
+.opt:has(input:checked){border:2px solid var(--accent);padding:15px;box-shadow:0 6px 24px -10px rgba(224,36,27,.35)}
+.opt:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
+.opt-hint{font-size:13px;color:var(--ink-2);background:var(--surface);border:1px dashed var(--accent);border-radius:var(--r-md);padding:10px 14px;margin-bottom:12px}
+.opt-hint b{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-right:10px}
+.src{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:12px}
+.src-l{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.src label{font-size:12.5px;padding:6px 12px;border:1px solid var(--rule);border-radius:999px;background:var(--surface);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.src input{position:absolute;opacity:0;pointer-events:none}
+.src label:has(input:checked){background:var(--ink);border-color:var(--ink);color:var(--surface)}
+.src label:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
+.opt-bom{display:none}
+#options:has(#opt1:checked) #bom1,#options:has(#opt2:checked) #bom2,#options:has(#opt3:checked) #bom3,#options:has(#opt4:checked) #bom4{display:block;animation:fadeIn .45s ease-in}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.opt-bom{animation:none!important}}
+
+/* stacked cost bar */
+.stack{display:flex;height:34px;border-radius:var(--r-sm);overflow:hidden;box-shadow:var(--sh-1);margin:6px 0 8px}
+.stack div{display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--font-mono);font-size:10.5px;white-space:nowrap;overflow:hidden;min-width:0;gap:.35em}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink-3);margin-bottom:18px}
+.legend > span::before{content:'';display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--c);margin-right:6px;vertical-align:-1px}
+
+
+
+
+.opt h4 sub.v{display:block;margin:3px 0 0;vertical-align:baseline}
+.note{font-size:11.5px;color:var(--muted);margin-top:10px}
+.vpn-n{width:4.5em;font:inherit;padding:2px 6px;border:1px solid var(--rule);border-radius:4px;background:var(--surface);color:var(--ink)}
+
+
+/* scaling path */
+.sp-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.sp-card{background:var(--surface);border:1px solid var(--rule);border-radius:var(--r-md);box-shadow:var(--sh-2);padding:16px 18px}
+.sp-map{width:100%;height:auto;display:block;margin:8px 0 6px}
+.sp-map circle{transition:fill .25s}
+.sp-row{--fill:#E0241B;--soft:#FEF0EF;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;align-items:center;padding:12px 0 8px;border-top:1px solid var(--rule)}
+.sp-row[data-band=strong]{--fill:#047857;--soft:#D1FAE5}
+.sp-row[data-band=fair]{--fill:#D97706;--soft:#FEF3C7}
+.sp-row label{font-size:13px;font-weight:600;color:var(--ink);line-height:1.35}
+.sp-row label b{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--fill);color:#fff;font-family:var(--font-mono);font-size:10px;margin-right:6px;vertical-align:1px;transition:background .25s}
+.sp-row label small{display:block;font-weight:400;font-size:11.5px;color:var(--ink-3);margin-left:24px}
+.sp-row output{grid-row:1;grid-column:2;font-family:var(--font-mono);font-size:11.5px;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--fill);background:var(--soft);border-radius:var(--r-pill);padding:3px 10px;transition:color .25s,background .25s}
+/* range: soft zone track, solid fill up to the thumb. thumb is 18px, so stops are inset 9px */
+.sp-row input{--at:calc(9px + (100% - 18px) * var(--p, .5));grid-column:1/-1;width:100%;height:22px;margin:0;background:transparent;-webkit-appearance:none;appearance:none;cursor:pointer}
+.sp-row input::-webkit-slider-runnable-track{height:6px;border-radius:var(--r-pill);background:linear-gradient(to right,var(--fill) 0 var(--at),transparent var(--at)),linear-gradient(to right,rgba(224,36,27,.16) 0 calc(9px + (100% - 18px) * .4),rgba(217,119,6,.22) 0 calc(9px + (100% - 18px) * .5),rgba(4,120,87,.16) 0)}
+.sp-row input::-moz-range-track{height:6px;border-radius:var(--r-pill);background:linear-gradient(to right,var(--fill) 0 var(--at),transparent var(--at)),linear-gradient(to right,rgba(224,36,27,.16) 0 calc(9px + (100% - 18px) * .4),rgba(217,119,6,.22) 0 calc(9px + (100% - 18px) * .5),rgba(4,120,87,.16) 0)}
+.sp-row input::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;margin-top:-6px;border-radius:50%;background:#fff;border:2px solid var(--fill);box-shadow:0 1px 3px rgba(15,17,23,.18),0 0 0 0 var(--soft);transition:box-shadow .2s,border-color .25s,transform .15s}
+.sp-row input::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid var(--fill);box-shadow:0 1px 3px rgba(15,17,23,.18);transition:box-shadow .2s,border-color .25s}
+.sp-row input:hover::-webkit-slider-thumb{box-shadow:0 1px 3px rgba(15,17,23,.18),0 0 0 6px var(--soft)}
+.sp-row input:active::-webkit-slider-thumb{transform:scale(1.1)}
+.sp-row input:focus-visible{outline:none}
+.sp-row input:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 3px #fff,0 0 0 5px var(--fill)}
+.sp-row input:focus-visible::-moz-range-thumb{box-shadow:0 0 0 3px #fff,0 0 0 5px var(--fill)}
+.sp-scale{grid-column:1/-1;position:relative;height:14px;font-family:var(--font-mono);font-size:9px;color:var(--muted)}
+.sp-scale span{position:absolute;left:calc(9px + (100% - 18px) * var(--t));transform:translateX(-50%)}
+.sp-scale span:first-child{transform:none;left:0}.sp-scale span:last-child{transform:none;left:auto;right:0}
+.sp-scale span.th::before{content:'';position:absolute;left:50%;top:-5px;width:1px;height:4px;background:var(--rule-2)}
+.sp-key{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:11px;color:var(--ink-3);padding-top:10px;border-top:1px solid var(--rule)}
+.sp-key span::before{content:'';display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--c);margin-right:5px;vertical-align:-1px}
+.sp-verdict{border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:var(--r-sm);padding:10px 14px;margin-top:12px}
+.sp-vt{font-size:15px;font-weight:650;line-height:1.35}
+.sp-vc{font-size:12.5px;color:var(--ink-3);margin-top:2px}
+.sp-vc span{font-family:var(--font-mono);font-weight:600;color:var(--ink)}
+.sp-steps{list-style:none;display:none;flex-direction:column;gap:6px}
+#scaling:has(input[name=sp][value="1"]:checked) .sp-steps[data-stack="1"],#scaling:has(input[name=sp][value="2"]:checked) .sp-steps[data-stack="2"]{display:flex}
+.sp-step{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:10px;align-items:start;padding:10px 12px;border:1px solid var(--rule);border-radius:var(--r-sm);opacity:.42;transition:opacity .25s,border-color .25s,background .25s}
+.sp-step.base,.sp-step.on,.sp-step.follow.live{opacity:1}
+.sp-step:not(.base,.on,.live) .sp-d{display:none}
+.sp-step.on{border:2px solid var(--accent);padding:9px 11px;background:#FFF7F6}
+.sp-step.follow{border-style:dashed}
+.sp-n{font-family:var(--font-mono);font-size:10.5px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--surface-2);color:var(--ink-3)}
+.sp-step.on .sp-n{background:var(--accent);color:#fff}
+.sp-t{font-size:13px;font-weight:600;line-height:1.35}
+.sp-d{font-size:12px;color:var(--ink-3);line-height:1.45;margin-top:2px}
+.sp-c{text-align:right;font-family:var(--font-mono);font-size:11.5px;font-variant-numeric:tabular-nums;white-space:nowrap;display:flex;flex-direction:column;gap:2px}
+.sp-add{color:var(--ink-3)}
+.sp-tot{font-weight:600;color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.sp-step,.sp-map circle,.sp-row output,.sp-row label b{transition:none}}
+
+footer{max-width:1180px;margin:0 auto;padding:24px 48px 60px;font-size:11.5px;color:var(--muted);border-top:1px solid var(--rule)}
+
+@media (max-width:900px){
+  .shell{grid-template-columns:minmax(0,1fr);padding:0 16px 60px}.toc{display:none}
+  .hdr{padding:36px 16px 28px}.hdr h1{font-size:28px}
+  .badge{white-space:normal}
+  .topbar{padding:0 16px}.topbar-label{display:none}
+  .kpis{grid-template-columns:1fr 1fr}
+  .opts{grid-template-columns:1fr}
+  .sp-grid{grid-template-columns:1fr}
+  footer{padding:24px 16px 48px}
+}
+@media print{.topbar,.toc{display:none}.shell{grid-template-columns:1fr}body{background:#fff}.section{break-inside:avoid-page}}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a class="topbar-logo" href="#top" aria-label="NYC FIRST"></a>
+  <div class="topbar-divider"></div>
+  <span class="topbar-label">Proposal · Staff 5G Network</span>
+  <span class="topbar-ask">Approval requested → Operations</span>
+</nav>
+
+<header class="hdr" id="top">
+  <div class="hdr-logo" role="img" aria-label="NYC FIRST"></div>
+  <div class="eyebrow"><span class="pulse-dot"></span>Proposal &nbsp;·&nbsp; STEM Center Operations &nbsp;·&nbsp; Prepared for the Operations Manager</div>
+  <h1>Independent <em>5G Staff Network</em> for the NYC FIRST STEM Center</h1>
+  <p class="hdr-desc">
+    DOE network filtering blocks the tools our staff use every day. This brief asks for approval of a small,
+    self-contained cellular network for NYC FIRST staff only. It needs no cabling, no DOE tickets and no student access.
+    It sets out four hardware options, the full up-front hardware cost of each, the recurring cost, and a step-by-step path that buys only what a WiFiman survey shows is needed.
+  </p>
+  <div class="badges">
+    <span class="badge b-accent">Option 1 · 5G modem wired to an Express 7</span>
+    <span class="badge b-blue">Zero cabling</span>
+    <span class="badge b-green">Staff only · no students</span>
+    <span class="badge b-amber">30-day risk-free return</span>
+  </div>
+  <div class="kpis">
+    <div class="kpi hot"><div class="kpi-l">Hardware CAPEX</div><div class="kpi-v" data-p="u5g poe ux7"></div><div class="kpi-s">Option 1 · <span data-src-name></span>, one order</div></div>
+    <div class="kpi"><div class="kpi-l">Monthly OPEX</div><div class="kpi-v">$60–70</div><div class="kpi-s">Unlimited business data plan</div></div>
+    <div class="kpi"><div class="kpi-l">3-year TCO</div><div class="kpi-v" data-tco="u5g poe ux7"></div><div class="kpi-s">Option 1 + 36 mo service</div></div>
+  </div>
+</header>
+
+<hr class="div">
+
+<div class="shell">
+<nav class="toc" id="toc">
+  <div class="toc-head">Contents</div>
+  <a href="#problem"><span>01</span>The Problem</a>
+  <a href="#compliance"><span>02</span>Policy Compliance</a>
+  <a href="#site"><span>03</span>Site Constraints</a>
+  <a href="#options"><span>04</span>Hardware Options</a>
+  <a href="#scaling"><span>05</span>Scaling Path</a>
+  <a href="#plans"><span>06</span>5G Service Plans</a>
+  <a href="#techsoup"><span>07</span>Cisco Donation</a>
+</nav>
+
+<main>
+
+<!-- 01 -->
+<section class="section" id="problem">
+  <div class="sec-eye">01 · Executive Summary</div>
+  <h2 class="sec-title">DOE filtering blocks core staff tools</h2>
+  <p class="sec-lede">Citywide <a href="https://www.zscaler.com">Zscaler</a> filtering on the DOE network blocks the development and productivity tools our programs are built on.</p>
+
+  <div class="chips">
+    <span class="chip"><i></i><a href="https://pages.github.com">GitHub Pages</a> · blocked</span>
+    <span class="chip"><i></i><a href="https://claude.ai">Claude</a> · blocked</span>
+    <span class="chip"><i></i><a href="https://chatgpt.com">ChatGPT</a> · blocked</span>
+    <span class="chip warn"><i></i><a href="https://vercel.com">Vercel</a> · block expected</span>
+    <span class="chip warn"><i></i><a href="https://mullvad.net">Mullvad</a> &amp; other advanced VPNs · block expected</span>
+  </div>
+
+  <div class="rule-box rb-amber">
+    <div>
+      <div class="rule-lbl">A VPN is not a long-term solution</div>
+      <div class="rule-txt">DOE blocks VPNs by policy (<em>"Attempting to gain access to material that is blocked or filtered by the Department;"</em> <a href="https://www.schools.nyc.gov/about-us/policies/internet-acceptable-use-policy">DOE Acceptable Use Policy</a>).</div>
+      <div class="rule-sub">Basic VPNs are all blocked. Only high-security TLS-encrypted ones slip through, and only because they aren't on the block lists yet.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="section" id="compliance">
+  <div class="sec-eye">02 · Policy Compliance</div>
+  <h2 class="sec-title">Separate network, separate people, no conflict</h2>
+  <div class="rule-box rb-green">
+    <div>
+      <div class="rule-lbl">Compliance position</div>
+      <div class="rule-txt">NYC FIRST staff are not DOE employees and receive no DOE funding or salary. Running a separate cellular gateway, outside DOE infrastructure, breaks no departmental rule.</div>
+    </div>
+  </div>
+  <div class="rule-box">
+    <div>
+      <div class="rule-lbl">Mandatory guardrail</div>
+      <div class="rule-txt">Students must never connect to this network.</div>
+      <div class="rule-sub">Student tools, activities and devices stay on approved DOE infrastructure, which keeps municipal student access fully separate from staff operations. Enforce it with a staff-only SSID, a non-shared passphrase and a periodic review of the client list in the UniFi console.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="section" id="site">
+  <div class="sec-eye">03 · Physical Architecture</div>
+  <h2 class="sec-title">No cabling, heavy RF noise, thick concrete</h2>
+  <p class="sec-lede">Facilities allows no cabling of any kind: no drilling, no runs through walls, ceilings or floor slabs, and not even a temporary cable taped along a wall or stairwell. All equipment sits together in one spot at the stairwell threshold. NYC FIRST has used cellular workarounds before, and earlier feasibility work on 5G extenders for the basement dead zone points to the same answer: a gateway placed at a threshold, with nothing installed in the building.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 760 360" role="img" aria-label="Cross-section: 5G gateway at the ground-floor stairwell threshold, directional antenna aimed down the stairwell to a UX7 mesh point at the landing, which covers the basement STEM Center around the turn; DOE Wi-Fi noise on both floors">
+      <defs>
+        <pattern id="conc" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#C9CFDA"/><line x1="0" y1="0" x2="0" y2="8" stroke="#9DA1AC" stroke-width="2"/></pattern>
+        <marker id="tw" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8z" fill="#2563EB"/></marker>
+        <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E0241B" stop-opacity=".45"/><stop offset="1" stop-color="#E0241B" stop-opacity=".05"/></linearGradient>
+      </defs>
+      <!-- sky / tower -->
+      <text x="20" y="26" font-family="Geist Mono,monospace" font-size="11" fill="#6B6F7A">CARRIER 5G (AT&amp;T / T-MOBILE BUSINESS)</text>
+      <path d="M640 20 l10 50 h-20 z" fill="none" stroke="#2563EB" stroke-width="2"/><circle cx="640" cy="18" r="4" fill="#2563EB"/>
+      <path d="M634.3 12.3 A8 8 0 0 0 634.3 23.7 M645.7 12.3 A8 8 0 0 1 645.7 23.7" fill="none" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round" stroke-opacity="1"/>
+      <path d="M630.1 8.1 A14 14 0 0 0 630.1 27.9 M649.9 8.1 A14 14 0 0 1 649.9 27.9" fill="none" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round" stroke-opacity="0.7"/>
+      <path d="M625.9 3.9000000000000004 A20 20 0 0 0 625.9 32.1 M654.1 3.9000000000000004 A20 20 0 0 1 654.1 32.1" fill="none" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round" stroke-opacity="0.4"/>
+      <!-- ground floor -->
+      <rect x="20" y="90" width="720" height="100" fill="#F4F7FC" stroke="#CDDAEE"/>
+      <text x="32" y="110" font-family="Geist Mono,monospace" font-size="10.5" fill="#6B6F7A">GROUND FLOOR · DOE</text>
+      <!-- DOE Wi-Fi noise, ground floor -->
+      <g fill="none" stroke="#92400E" stroke-opacity=".55">
+        <circle cx="110" cy="142" r="8"/><circle cx="110" cy="142" r="18"/><circle cx="110" cy="142" r="28"/>
+        <circle cx="230" cy="142" r="8"/><circle cx="230" cy="142" r="18"/><circle cx="230" cy="142" r="28"/>
+        <circle cx="560" cy="142" r="8"/><circle cx="560" cy="142" r="18"/><circle cx="560" cy="142" r="28"/>
+      </g>
+      <g fill="#92400E"><rect x="104" y="138" width="12" height="8" rx="2"/><rect x="224" y="138" width="12" height="8" rx="2"/><rect x="554" y="138" width="12" height="8" rx="2"/></g>
+      <text x="40" y="184" font-family="Geist,sans-serif" font-size="11" fill="#92400E">DOE network Wi-Fi (both floors): co-channel noise</text>
+      <!-- stairwell opening -->
+      <rect x="330" y="90" width="120" height="100" fill="#fff" stroke="#B8CCEA" stroke-dasharray="4 3"/>
+      <text x="345" y="104" font-family="Geist Mono,monospace" font-size="9.5" fill="#6B6F7A">STAIRWELL</text>
+      <path d="M618 62 C 520 80, 440 110, 412 127" fill="none" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#tw)"/>
+      <!-- gateway stack -->
+      <rect x="352" y="130" width="76" height="30" rx="4" fill="#0F1117"/>
+      <text x="390" y="149" text-anchor="middle" font-family="Geist Mono,monospace" font-size="9.5" fill="#fff">5G + GATEWAY</text>
+      <rect x="362" y="163" width="56" height="14" rx="2" fill="#E0241B"/>
+      <text x="390" y="173" text-anchor="middle" font-family="Geist Mono,monospace" font-size="8" fill="#fff">U7 OUT ▼</text>
+      <!-- slab -->
+      <rect x="20" y="190" width="310" height="34" fill="url(#conc)"/>
+      <rect x="450" y="190" width="290" height="34" fill="url(#conc)"/>
+      <text x="36" y="212" font-family="Geist Mono,monospace" font-size="10" fill="#3A3D45">STEEL-REINFORCED CONCRETE SLAB</text>
+      <clipPath id="bsmt"><rect x="20" y="224" width="720" height="120"/></clipPath>
+      <!-- beam: U7 Outdoor aimed at the stair landing -->
+      <path d="M375 177 L405 177 L438 316 L342 316 Z" fill="url(#beam)"/>
+      <!-- basement -->
+      <rect x="20" y="224" width="720" height="120" fill="none" stroke="#CDDAEE"/>
+      <text x="32" y="244" font-family="Geist Mono,monospace" font-size="10.5" fill="#6B6F7A">BASEMENT · NYC FIRST STEM CENTER</text>
+      <!-- DOE Wi-Fi noise, basement -->
+      <g fill="none" stroke="#92400E" stroke-opacity=".55">
+        <circle cx="80" cy="300" r="8"/><circle cx="80" cy="300" r="18"/><circle cx="80" cy="300" r="28"/>
+        <circle cx="185" cy="306" r="8"/><circle cx="185" cy="306" r="18"/><circle cx="185" cy="306" r="28"/>
+      </g>
+      <g fill="#92400E"><rect x="74" y="296" width="12" height="8" rx="2"/><rect x="179" y="302" width="12" height="8" rx="2"/></g>
+      <!-- landing wall with double doors to the big room -->
+      <rect x="456" y="224" width="12" height="80" fill="url(#conc)"/>
+      <text x="476" y="240" font-family="Geist Mono,monospace" font-size="9.5" fill="#6B6F7A">WALL · DOUBLE DOORS</text>
+      <!-- UX7 mesh point: omni rings into the workspace -->
+      <g fill="none" stroke="#047857" stroke-opacity=".45" clip-path="url(#bsmt)">
+        <circle cx="400" cy="318" r="50"/><circle cx="400" cy="318" r="95"/><circle cx="400" cy="318" r="140"/>
+      </g>
+      <rect x="372" y="309" width="56" height="17" rx="3" fill="#047857"/>
+      <text x="400" y="321" text-anchor="middle" font-family="Geist Mono,monospace" font-size="8.5" fill="#fff">UX7 MESH</text>
+      <text x="400" y="338" text-anchor="middle" font-family="Geist Mono,monospace" font-size="8.5" fill="#3A3D45">STAIR LANDING</text>
+      <g font-family="Geist,sans-serif" font-size="11" fill="#0F1117">
+        <rect x="580" y="292" width="44" height="28" rx="3" fill="#fff" stroke="#3A3D45"/><rect x="656" y="292" width="44" height="28" rx="3" fill="#fff" stroke="#3A3D45"/>
+        <text x="640" y="336" text-anchor="middle" font-size="9" fill="#3A3D45">staff laptops</text>
+      </g>
+      <text x="336" y="256" text-anchor="end" font-family="Geist,sans-serif" font-size="12" font-weight="600" fill="#E0241B">45° beam (5 GHz)</text>
+      <text x="336" y="270" text-anchor="end" font-family="Geist,sans-serif" font-size="11" fill="#3A3D45">down the open stairwell</text>
+      <text x="336" y="284" text-anchor="end" font-family="Geist,sans-serif" font-size="11" fill="#3A3D45">to the landing</text>
+      <text x="580" y="262" font-family="Geist,sans-serif" font-size="12" font-weight="600" fill="#047857">UX7 mesh point</text>
+      <text x="580" y="276" font-family="Geist,sans-serif" font-size="11" fill="#3A3D45">re-broadcasts through the doors</text>
+    </svg>
+    <figcaption>Three things weaken the signal: <strong>(1)</strong> RF noise from the dense DOE network Wi-Fi, which covers <em>both</em> floors, including the basement STEM Center, <strong>(2)</strong> the steel-reinforced concrete slab, and <strong>(3)</strong> the wall at the bottom of the stairs. The way into the big room is a set of double doors off to the side of the landing, and a directional beam can't bend through them. The design sends the beam down the open stairwell to the landing, where a UX7 mesh point plugged into the landing-wall outlet picks it up and re-broadcasts it through the doors into the big room. In the basement our Wi-Fi shares the air with DOE access points, so WiFiman channel planning is needed.</figcaption>
+  </figure>
+</section>
+
+<!-- 04 -->
+<section class="section" id="options">
+  <div class="sec-eye">04 · Master Hardware Options</div>
+  <h2 class="sec-title">Four ways to build it</h2>
+  <p class="sec-lede">Prices are <span id="srcNote"></span>, checked 2026-09-29 (U7 Outdoor and UX7 on 2026-10-12, TechSoup fees on 2026-10-13), for each option bought in one order. Vendor links sit in small type after each product name.</p>
+
+  <div class="src" role="radiogroup" aria-label="Price source">
+    <span class="src-l">Price source</span>
+    <label><input type="radio" name="src" value="amazon" checked>Amazon</label>
+    <label><input type="radio" name="src" value="ubiquiti">Ubiquiti (Direct)</label>
+    <label><input type="radio" name="src" value="bh">B&amp;H</label>
+  </div>
+  <p class="opt-hint"><b>How to assess</b>Click an option card to see its bill of materials and signal path. </p>
+  <div class="opts">
+    <label class="opt">
+      <input type="radio" name="opt" id="opt1" checked>
+      <div class="opt-tag">Option 1<br>Wired modem + gateway</div>
+      <h4>5G Max + Express 7<sub class="v"><a href="https://store.ui.com/us/en/products/u5g-max">Ubiquiti</a><a href="https://www.bhphotovideo.com/c/product/1941028-REG/ubiquiti_u5g_max_unifi_5g_max.html">B&amp;H</a><a href="https://www.amazon.com/Ubiquiti-Networks-U5G-Max-UniFi-Max/dp/B0GHPZ54YZ">Amazon</a></sub></h4>
+      <div class="opt-price"><span data-p="u5g poe ux7"></span> <small>modem + gateway, long cable down the stairwell</small></div>
+      <ul>
+        <li>UniFi 5G Max modem + PoE+ adapter</li>
+        <li>Express 7 gateway with Wi-Fi 7</li>
+        <li>Optional 2nd UX7 mesh point at the landing</li>
+        <li>Full UniFi suite + WiFiman</li>
+      </ul>
+      <ul class="opt-bot">
+        <li class="warn">Long cable down the stairwell. No DOE permission to install in-wall.</li>
+        <li class="good">Most effective. A wired AP is most reliable.</li>
+      </ul>
+    </label>
+    <label class="opt">
+      <input type="radio" name="opt" id="opt2">
+      <div class="opt-tag">Option 2<br>All-in-one + AP + mesh</div>
+      <h4>Dream Router 5G Max Full Stack<sub class="v"><a href="https://store.ui.com/us/en/products/udr-5g-max">Ubiquiti</a><a href="https://www.bhphotovideo.com/c/product/1974942-REG/ubiquiti_udr_5g_max_us_dream_router_5g_max.html">B&amp;H</a><a href="https://www.amazon.com/Ubiquiti-Networks-UDR-5G-Max-US-Dream-Router/dp/B0GS349VYT">Amazon</a></sub></h4>
+      <div class="opt-price"><span data-p="udr5g u7o poe ux7"></span> <small>router + directional AP + mesh point, up front</small></div>
+      <ul>
+        <li>Dream Router 5G Max: modem, gateway, Wi-Fi 7</li>
+        <li>U7 Outdoor directional AP, aimed down the stairs</li>
+        <li>UX7 mesh point at the landing</li>
+        <li>Full UniFi suite + WiFiman</li>
+      </ul>
+      <ul class="opt-bot">
+        <li class="warn">All-wireless path through concrete and DOE noise. Less reliable.</li>
+        <li class="good">Best option with no cabling.</li>
+      </ul>
+    </label>
+    <label class="opt">
+      <input type="radio" name="opt" id="opt3">
+      <div class="opt-tag">Option 3<br>Budget, non-UniFi</div>
+      <h4>GL.iNet Spitz AX (GL-X3000)<sub class="v"><a href="https://store.gl-inet.com/products/spitz-ax-gl-x3000-wi-fi-6-4g-lte-sim-openwrt">GL.iNet</a><a href="https://www.amazon.com/GL-iNet-GL-X3000-Multi-WAN-Detachable-WireGuard/dp/B0C5RCQ8N5">Amazon</a><a href="https://www.walmart.com/ip/GL-iNet-X3000-5G-NR-AX3000-Wi-Fi-6-Router-with-Detachable-Antennas/5282807666">Walmart</a></sub></h4>
+      <div class="opt-price"><span data-p="glx"></span> <small>single box</small></div>
+      <ul>
+        <li>Standalone 5G router, Wi-Fi 6</li>
+        <li>No remote management or RF diagnostics</li>
+      </ul>
+      <ul class="opt-bot">
+        <li class="warn">Likely won't reach the basement. No diagnostics, no UniFi mesh.</li>
+        <li class="good">Cheapest. One box, no cabling.</li>
+      </ul>
+    </label>
+    <label class="opt">
+      <input type="radio" name="opt" id="opt4">
+      <div class="opt-tag">Option 4<br>Cisco donation · TechSoup</div>
+      <h4>Meraki MG52 + 2× CW9172I<sub class="v"><a href="https://www.techsoup.org/cisco-meraki/cisco-meraki-gateways">TechSoup MG52</a><a href="https://www.techsoup.org/products/cisco-meraki-cw9172i-wi-fi-7-wireless-access-point-with-5-year-license-hw-59940-">TechSoup AP</a></sub></h4>
+      <div class="opt-price"><span data-p="mg52 mg52l cw72 cw72 poe poe poe"></span> <small>TechSoup fees, 5-year licenses, AP + mesh point</small></div>
+      <ul>
+        <li>Meraki MG52 5G modem (AT&amp;T, T-Mobile, Verizon)</li>
+        <li>Wi-Fi 7 AP at the threshold, 2nd AP as mesh point at the landing</li>
+        <li>Meraki Dashboard, 5-year licenses included</li>
+      </ul>
+      <ul class="opt-bot">
+        <li class="warn">Licenses expire after 5 years. No 30-day return. Eligibility not yet confirmed.</li>
+        <li class="good">Enterprise gear at nonprofit fees. Only option that supports Verizon.</li>
+      </ul>
+    </label>
+  </div>
+
+  <div class="opt-bom" id="bom1">
+  <h3 class="sub">Option 1: bill of materials</h3>
+  <div class="stack" aria-label="Option 1 cost breakdown">
+    <div data-seg="u5g" style="background:#0F1117">5G Max <span data-p="u5g"></span></div>
+    <div data-seg="ux7" style="background:#2563EB">Gateway <span data-p="ux7"></span></div>
+    <div data-seg="poe" style="background:#D97706" title="PoE adapter"></div>
+  </div>
+  <div class="legend">
+    <span style="--c:#0F1117">5G modem · <span data-pct="u5g|u5g poe ux7"></span></span><span style="--c:#2563EB">Gateway + Wi-Fi 7 · <span data-pct="ux7|u5g poe ux7"></span></span><span style="--c:#D97706">PoE power · <span data-pct="poe|u5g poe ux7"></span></span>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Component</th><th>Function</th><th class="num" data-src-name>Amazon</th></tr></thead>
+      <tbody>
+        <tr><td><strong>UniFi 5G Max</strong> (U5G-Max)<sub class="v"><a href="https://store.ui.com/us/en/products/u5g-max">Ubiquiti</a><a href="https://www.bhphotovideo.com/c/product/1941028-REG/ubiquiti_u5g_max_unifi_5g_max.html">B&amp;H</a><a href="https://www.amazon.com/Ubiquiti-Networks-U5G-Max-UniFi-Max/dp/B0GHPZ54YZ">Amazon</a></sub></td><td>5G modem. Needs a UniFi console (no web interface of its own) and shows up there as the WAN</td><td class="num" data-p="u5g"></td></tr>
+        <tr><td><strong>PoE+ Adapter 30W</strong> (U-PoE-at), powers the 5G Max<sub class="v"><a href="https://store.ui.com/us/en/products/u-poe-plus">Ubiquiti</a><a href="https://www.amazon.com/UBIQUITI-Injector-802-3AT-Suitable-U6-LITE/dp/B0B7QDZYPX">Amazon</a></sub></td><td>5G Max is PoE-only (~14.5 W) and the UX7 has no PoE ports</td><td class="num" data-p="poe"></td></tr>
+        <tr><td><strong>UniFi Express 7</strong> (UX7), gateway<sub class="v"><a href="https://store.ui.com/us/en/products/ux7">Ubiquiti</a><a href="https://www.bhphotovideo.com/c/product/1884947-REG/ubiquiti_networks_ux7_us_unifi_express_7.html">B&amp;H</a><a href="https://www.amazon.com/dp/B0F8B2XW8Q">Amazon</a></sub></td><td>Routing, firewall, UniFi console and Wi-Fi 7 (2.4/5/6 GHz, 26 dBm + 7 dBi on 5 GHz). The 5G Max plugs into its 10 GbE WAN port; USB-C wall power</td><td class="num" data-p="ux7"></td></tr>
+        <tr class="total"><td>Total CAPEX</td><td>5G modem + gateway with Wi-Fi 7</td><td class="num" data-p="u5g poe ux7"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="sub">Signal path</h3>
+  <figure class="fig">
+    <svg viewBox="0 0 760 120" role="img" aria-label="Signal path: carrier 5G to UniFi 5G Max, wired to a UniFi Express 7 gateway, to basement staff devices">
+      <g font-family="Geist,sans-serif" font-size="11.5" text-anchor="middle">
+        <rect x="4" y="34" width="140" height="52" rx="8" fill="#DCE8FC" stroke="#2563EB"/><text x="74" y="58" fill="#2563EB" font-weight="600">Carrier 5G</text><text x="74" y="74" font-size="9.5" fill="#3A3D45">AT&amp;T / T-Mobile Biz</text>
+        <rect x="208" y="34" width="140" height="52" rx="8" fill="#0F1117"/><text x="278" y="58" fill="#fff" font-weight="600">5G Max</text><text x="278" y="74" font-size="9.5" fill="#B8CCEA">modem · PoE-in</text>
+        <rect x="412" y="34" width="140" height="52" rx="8" fill="#2563EB"/><text x="482" y="58" fill="#fff" font-weight="600">Express 7</text><text x="482" y="74" font-size="9.5" fill="#DCE8FC">gateway · Wi-Fi 7</text>
+        <rect x="616" y="34" width="140" height="52" rx="8" fill="#FEF0EF" stroke="#E0241B"/><text x="686" y="58" fill="#E0241B" font-weight="600">Staff devices</text><text x="686" y="74" font-size="9.5" fill="#3A3D45">basement</text>
+      </g>
+      <g stroke="#6B6F7A" stroke-width="1.5" fill="none" marker-end="url(#ar1)">
+        <path d="M144 60 H204" stroke-dasharray="4 3"/>
+        <path d="M348 60 H408"/>
+        <path d="M552 60 H612" stroke-dasharray="4 3"/>
+      </g>
+      <defs><marker id="ar1" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L8 4 L0 8z" fill="#6B6F7A"/></marker></defs>
+      <g font-family="Geist Mono,monospace" font-size="9.5" fill="#92400E" text-anchor="middle">
+        <text x="378" y="26">PoE+ 30W → WAN</text>
+      </g>
+      <text x="380" y="110" text-anchor="middle" font-family="Geist Mono,monospace" font-size="9.5" fill="#9DA1AC">dashed = wireless · solid = long cable down stairwell, not in wall · PoE+ 30W powers 5G Max · UX7 on wall outlet</text>
+    </svg>
+  </figure>
+  </div>
+
+  <div class="opt-bom" id="bom2">
+  <h3 class="sub">Option 2: bill of materials</h3>
+  <div class="stack" aria-label="Option 2 cost breakdown">
+    <div data-seg="udr5g" style="background:#0F1117">Dream Router 5G Max <span data-p="udr5g"></span></div>
+    <div data-seg="u7o" style="background:#047857">AP <span data-p="u7o"></span></div>
+    <div data-seg="ux7" style="background:#E0241B">Mesh <span data-p="ux7"></span></div>
+    <div data-seg="poe" style="background:#D97706" title="PoE adapter"></div>
+  </div>
+  <div class="legend">
+    <span style="--c:#0F1117">Modem + gateway + Wi-Fi 7 · <span data-pct="udr5g|udr5g u7o poe ux7"></span></span><span style="--c:#047857">Directional AP · <span data-pct="u7o|udr5g u7o poe ux7"></span></span><span style="--c:#E0241B">Mesh point · <span data-pct="ux7|udr5g u7o poe ux7"></span></span><span style="--c:#D97706">PoE power · <span data-pct="poe|udr5g u7o poe ux7"></span></span>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Component</th><th>Function</th><th class="num" data-src-name>Amazon</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Dream Router 5G Max</strong> (UDR-5G-Max)<sub class="v"><a href="https://store.ui.com/us/en/products/udr-5g-max">Ubiquiti</a><a href="https://www.bhphotovideo.com/c/product/1974942-REG/ubiquiti_udr_5g_max_us_dream_router_5g_max.html">B&amp;H</a><a href="https://www.amazon.com/Ubiquiti-Networks-UDR-5G-Max-US-Dream-Router/dp/B0GS349VYT">Amazon</a></sub></td><td>5G modem, routing, firewall and Wi-Fi 7 in one box; built-in PoE port</td><td class="num" data-p="udr5g"></td></tr>
+        <tr><td><strong>U7 Outdoor</strong> (U7-Outdoor)<sub class="v"><a href="https://store.ui.com/us/en/products/u7-outdoor">Ubiquiti</a><a href="https://www.amazon.com/Ubiquiti-Networks-U7-Outdoor/dp/B0D7S8THPM">Amazon</a></sub></td><td>Wi-Fi 7 AP with built-in directional antenna: 12.5 dBi / 45° (5 GHz), 8 dBi / 90° (2.4 GHz). Switches to its included omni antennas in software</td><td class="num" data-p="u7o"></td></tr>
+        <tr><td><strong>PoE+ Adapter 30W</strong> (U-PoE-at), powers the U7 Outdoor<sub class="v"><a href="https://store.ui.com/us/en/products/u-poe-plus">Ubiquiti</a><a href="https://www.amazon.com/UBIQUITI-Injector-802-3AT-Suitable-U6-LITE/dp/B0B7QDZYPX">Amazon</a></sub></td><td>U7 Outdoor draws up to 19 W (PoE+); the router's PoE port is 15.4 W</td><td class="num" data-p="poe"></td></tr>
+        <tr><td><strong>UniFi Express 7</strong> (UX7), mesh point<sub class="v"><a href="https://store.ui.com/us/en/products/ux7">Ubiquiti</a><a href="https://www.bhphotovideo.com/c/product/1884947-REG/ubiquiti_networks_ux7_us_unifi_express_7.html">B&amp;H</a><a href="https://www.amazon.com/dp/B0F8B2XW8Q">Amazon</a></sub></td><td>Sits at the bottom of the stairs and plugs into a wall outlet (USB-C adapter), so no cabling. Runs as a UniFi mesh point: picks up the beam and re-broadcasts Wi-Fi 7 (2.4/5/6 GHz) around the turn</td><td class="num" data-p="ux7"></td></tr>
+        <tr class="total"><td>Total CAPEX</td><td>All-in-one router + directional AP + mesh point</td><td class="num" data-p="udr5g u7o poe ux7"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="sub">Signal path</h3>
+  <figure class="fig">
+    <svg viewBox="0 0 760 120" role="img" aria-label="Signal path: carrier 5G to Dream Router 5G Max to U7 Outdoor directional AP to UX7 mesh point at the stair landing to basement staff devices">
+      <g font-family="Geist,sans-serif" font-size="11.5" text-anchor="middle">
+        <rect x="4" y="34" width="126" height="52" rx="8" fill="#DCE8FC" stroke="#2563EB"/><text x="67" y="58" fill="#2563EB" font-weight="600">Carrier 5G</text><text x="67" y="74" font-size="9.5" fill="#3A3D45">AT&amp;T / T-Mobile Biz</text>
+        <rect x="160" y="34" width="126" height="52" rx="8" fill="#0F1117"/><text x="224" y="58" fill="#fff" font-weight="600">Dream Router 5G Max</text><text x="224" y="74" font-size="9.5" fill="#B8CCEA">modem · gateway · Wi-Fi 7</text>
+        <rect x="317" y="34" width="126" height="52" rx="8" fill="#047857"/><text x="380" y="58" fill="#fff" font-weight="600">U7 Outdoor</text><text x="380" y="74" font-size="9.5" fill="#D1FAE5">aimed at the landing</text>
+        <rect x="473" y="34" width="126" height="52" rx="8" fill="#E0241B"/><text x="536" y="58" fill="#fff" font-weight="600">UX7 mesh</text><text x="536" y="74" font-size="9.5" fill="#FEF0EF">landing · wall outlet</text>
+        <rect x="630" y="34" width="126" height="52" rx="8" fill="#FEF0EF" stroke="#E0241B"/><text x="693" y="58" fill="#E0241B" font-weight="600">Staff devices</text><text x="693" y="74" font-size="9.5" fill="#3A3D45">big room</text>
+      </g>
+      <g stroke="#6B6F7A" stroke-width="1.5" fill="none" marker-end="url(#ar2)">
+        <path d="M130 60 H156" stroke-dasharray="4 3"/>
+        <path d="M287 60 H313"/>
+        <path d="M443 60 H469" stroke-dasharray="4 3"/>
+        <path d="M600 60 H626" stroke-dasharray="4 3"/>
+      </g>
+      <defs><marker id="ar2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L8 4 L0 8z" fill="#6B6F7A"/></marker></defs>
+      <g font-family="Geist Mono,monospace" font-size="9.5" fill="#92400E" text-anchor="middle">
+        <text x="300" y="26">PoE+ 30W</text><text x="456" y="26">mesh link</text>
+      </g>
+      <text x="380" y="110" text-anchor="middle" font-family="Geist Mono,monospace" font-size="9.5" fill="#9DA1AC">dashed = wireless · solid = short patch cords · PoE+ 30W adapter powers the U7 Outdoor · UX7 plugs into a wall outlet</text>
+    </svg>
+  </figure>
+  </div>
+
+  <div class="opt-bom" id="bom3">
+  <h3 class="sub">Option 3: bill of materials</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Component</th><th>Function</th><th class="num" data-src-name>Amazon</th></tr></thead>
+      <tbody>
+        <tr><td><strong>GL.iNet Spitz AX</strong> (GL-X3000)<sub class="v"><a href="https://store.gl-inet.com/products/spitz-ax-gl-x3000-wi-fi-6-4g-lte-sim-openwrt">GL.iNet</a><a href="https://www.amazon.com/GL-iNet-GL-X3000-Multi-WAN-Detachable-WireGuard/dp/B0C5RCQ8N5">Amazon</a><a href="https://www.walmart.com/ip/GL-iNet-X3000-5G-NR-AX3000-Wi-Fi-6-Router-with-Detachable-Antennas/5282807666">Walmart</a></sub></td><td>5G modem, router and Wi-Fi 6 in one box; powered by its own AC adapter</td><td class="num" data-p="glx"></td></tr>
+        <tr class="total"><td>Total CAPEX</td><td>Standalone 5G router, no add-ons</td><td class="num" data-p="glx"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="sub">Signal path</h3>
+  <figure class="fig">
+    <svg viewBox="0 0 760 120" role="img" aria-label="Signal path: carrier 5G to GL.iNet Spitz AX to basement staff devices">
+      <g font-family="Geist,sans-serif" font-size="12" text-anchor="middle">
+        <rect x="10" y="34" width="120" height="52" rx="8" fill="#DCE8FC" stroke="#2563EB"/><text x="70" y="58" fill="#2563EB" font-weight="600">Carrier 5G</text><text x="70" y="74" font-size="10" fill="#3A3D45">AT&amp;T / T-Mobile Biz</text>
+        <rect x="280" y="34" width="200" height="52" rx="8" fill="#3A3D45"/><text x="380" y="58" fill="#fff" font-weight="600">GL.iNet Spitz AX</text><text x="380" y="74" font-size="10" fill="#D6D8DE">modem · router · Wi-Fi 6 (omni)</text>
+        <rect x="630" y="34" width="120" height="52" rx="8" fill="#FEF0EF" stroke="#E0241B"/><text x="690" y="58" fill="#E0241B" font-weight="600">Staff devices</text><text x="690" y="74" font-size="10" fill="#3A3D45">basement</text>
+      </g>
+      <g stroke="#6B6F7A" stroke-width="1.5" fill="none" marker-end="url(#ar3)">
+        <path d="M130 60 H276" stroke-dasharray="4 3"/><path d="M480 60 H626" stroke-dasharray="4 3"/>
+      </g>
+      <defs><marker id="ar3" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L8 4 L0 8z" fill="#6B6F7A"/></marker></defs>
+      <text x="380" y="110" text-anchor="middle" font-family="Geist Mono,monospace" font-size="9.5" fill="#9DA1AC">dashed = wireless · one box, no directional antenna: signal spreads in every direction</text>
+    </svg>
+  </figure>
+  </div>
+
+  <div class="opt-bom" id="bom4">
+  <h3 class="sub">Option 4: bill of materials</h3>
+  <div class="stack" aria-label="Option 4 cost breakdown">
+    <div data-seg="mg52" style="background:#0F1117">MG52 <span data-p="mg52"></span></div>
+    <div data-seg="mg52l" style="background:#3A3D45">License <span data-p="mg52l"></span></div>
+    <div data-seg="cw72" style="background:#047857">AP <span data-p="cw72"></span></div>
+    <div data-seg="cw72" style="background:#E0241B">Mesh <span data-p="cw72"></span></div>
+    <div data-seg="poe poe poe" style="background:#D97706" title="PoE adapters"></div>
+  </div>
+  <div class="legend">
+    <span style="--c:#0F1117">5G modem · <span data-pct="mg52|mg52 mg52l cw72 cw72 poe poe poe"></span></span><span style="--c:#3A3D45">Modem license · <span data-pct="mg52l|mg52 mg52l cw72 cw72 poe poe poe"></span></span><span style="--c:#047857">AP · <span data-pct="cw72|mg52 mg52l cw72 cw72 poe poe poe"></span></span><span style="--c:#E0241B">Mesh point · <span data-pct="cw72|mg52 mg52l cw72 cw72 poe poe poe"></span></span><span style="--c:#D97706">PoE power · <span data-pct="poe poe poe|mg52 mg52l cw72 cw72 poe poe poe"></span></span>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Component</th><th>Function</th><th class="num">Cost</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Meraki MG52</strong> (MG52-HW), TechSoup discount<sub class="v"><a href="https://www.techsoup.org/cisco-meraki/cisco-meraki-gateways">TechSoup</a><a href="https://documentation.meraki.com/SASE_and_SD-WAN/Cellular/Product_Information/Overviews_and_Datasheets/MG52%2F%2F52E_Technical_Specifications">Specs</a></sub></td><td>5G modem and router (NAT mode). No Wi-Fi. Certified for AT&amp;T, T-Mobile and Verizon</td><td class="num" data-p="mg52"></td></tr>
+        <tr><td><strong>MG52 5-year license</strong> (LIC-MG52-ENT-5Y)<sub class="v"><a href="https://www.techsoup.org/products/cisco-meraki-5-year-enterprise-license-for-mg52-and-mg52e-cellular-gateways-g-58579-">TechSoup</a></sub></td><td>Required. The modem stops working if it lapses</td><td class="num" data-p="mg52l"></td></tr>
+        <tr><td><strong>Meraki CW9172I</strong> + 5-year license, TechSoup donation<sub class="v"><a href="https://www.techsoup.org/products/cisco-meraki-cw9172i-wi-fi-7-wireless-access-point-with-5-year-license-hw-59940-">TechSoup</a></sub></td><td>Wi-Fi 7 AP at the stairwell threshold, patched into the MG52</td><td class="num" data-p="cw72"></td></tr>
+        <tr><td><strong>Meraki CW9172I</strong> + 5-year license, mesh point<sub class="v"><a href="https://www.techsoup.org/products/cisco-meraki-cw9172i-wi-fi-7-wireless-access-point-with-5-year-license-hw-59940-">TechSoup</a></sub></td><td>Second AP at the landing outlet. No cable back, so it runs as a mesh repeater</td><td class="num" data-p="cw72"></td></tr>
+        <tr><td><strong>3× PoE+ Adapter 30W</strong> (802.3at)<sub class="v"><a href="https://store.ui.com/us/en/products/u-poe-plus">Ubiquiti</a><a href="https://www.amazon.com/UBIQUITI-Injector-802-3AT-Suitable-U6-LITE/dp/B0B7QDZYPX">Amazon</a></sub></td><td>None of these ship with power. MG52 draws 16 W, each AP up to 25.5 W</td><td class="num" data-p="poe poe poe"></td></tr>
+        <tr class="total"><td>Total CAPEX</td><td>5G modem + AP + mesh point, 5 years of licenses</td><td class="num" data-p="mg52 mg52l cw72 cw72 poe poe poe"></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">The MG52 is listed as discount only; ask TechSoup whether it can be donated (see section 07).</p>
+
+  <h3 class="sub">Signal path</h3>
+  <figure class="fig">
+    <svg viewBox="0 0 760 120" role="img" aria-label="Signal path: carrier 5G to Meraki MG52 modem, patched to a CW9172I access point at the threshold, mesh link to a second CW9172I at the stair landing, to staff devices in the big room">
+      <g font-family="Geist,sans-serif" font-size="11.5" text-anchor="middle">
+        <rect x="4" y="34" width="126" height="52" rx="8" fill="#DCE8FC" stroke="#2563EB"/><text x="67" y="58" fill="#2563EB" font-weight="600">Carrier 5G</text><text x="67" y="74" font-size="9.5" fill="#3A3D45">AT&amp;T / T-Mobile / Verizon</text>
+        <rect x="160" y="34" width="126" height="52" rx="8" fill="#0F1117"/><text x="224" y="58" fill="#fff" font-weight="600">Meraki MG52</text><text x="224" y="74" font-size="9.5" fill="#B8CCEA">modem · router</text>
+        <rect x="317" y="34" width="126" height="52" rx="8" fill="#047857"/><text x="380" y="58" fill="#fff" font-weight="600">CW9172I</text><text x="380" y="74" font-size="9.5" fill="#D1FAE5">AP · threshold</text>
+        <rect x="473" y="34" width="126" height="52" rx="8" fill="#E0241B"/><text x="536" y="58" fill="#fff" font-weight="600">CW9172I mesh</text><text x="536" y="74" font-size="9.5" fill="#FEF0EF">landing · wall outlet</text>
+        <rect x="630" y="34" width="126" height="52" rx="8" fill="#FEF0EF" stroke="#E0241B"/><text x="693" y="58" fill="#E0241B" font-weight="600">Staff devices</text><text x="693" y="74" font-size="9.5" fill="#3A3D45">big room</text>
+      </g>
+      <g stroke="#6B6F7A" stroke-width="1.5" fill="none" marker-end="url(#ar4)">
+        <path d="M130 60 H156" stroke-dasharray="4 3"/>
+        <path d="M287 60 H313"/>
+        <path d="M443 60 H469" stroke-dasharray="4 3"/>
+        <path d="M600 60 H626" stroke-dasharray="4 3"/>
+      </g>
+      <defs><marker id="ar4" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L8 4 L0 8z" fill="#6B6F7A"/></marker></defs>
+      <g font-family="Geist Mono,monospace" font-size="9.5" fill="#92400E" text-anchor="middle">
+        <text x="300" y="26">PoE+ 30W ×2</text><text x="456" y="26">mesh link</text>
+      </g>
+      <text x="380" y="110" text-anchor="middle" font-family="Geist Mono,monospace" font-size="9.5" fill="#9DA1AC">dashed = wireless · solid = short patch cords · third PoE+ adapter powers the mesh AP from the landing outlet</text>
+    </svg>
+  </figure>
+  </div>
+
+</section>
+
+<!-- 05 -->
+<section class="section" id="scaling">
+  <div class="sec-eye">05 · Scaling Path</div>
+  <h2 class="sec-title">Buy in steps, let the survey decide</h2>
+  <p class="sec-lede">Option 1 above is priced as its starting build and Option 2 as its full worst case. Either way, start small, survey three spots with WiFiman, and add hardware only where the readings say it's needed. Every step fits inside the 30-day return window. Drag the sliders to your readings.</p>
+
+  <div class="src" role="radiogroup" aria-label="Stack">
+    <span class="src-l">Stack</span>
+    <label><input type="radio" name="sp" value="1" checked>Option 1 · 5G Max + Express 7</label>
+    <label><input type="radio" name="sp" value="2">Option 2 · Dream Router 5G Max</label>
+  </div>
+
+  <div class="sp-grid">
+    <div class="sp-card">
+      <div class="rule-lbl">WiFiman readings (signal strength)</div>
+      <svg class="sp-map" viewBox="0 0 420 200" role="img" aria-label="Plan view of the basement: the stairs come down to a landing that ends at a wall with an outlet (spot A). Double doors on the left of the landing open into the big room. B is just through the doors, C is at the far end of the big room.">
+        <defs><pattern id="conc2" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#C9CFDA"/><line x1="0" y1="0" x2="0" y2="6" stroke="#9DA1AC" stroke-width="2"/></pattern></defs>
+        <!-- big room -->
+        <rect x="8" y="8" width="304" height="184" rx="4" fill="#F4F7FC" stroke="#CDDAEE"/>
+        <g fill="#E3EAF5"><rect x="210" y="68" width="28" height="12" rx="2"/><rect x="164" y="68" width="28" height="12" rx="2"/><rect x="118" y="68" width="28" height="12" rx="2"/><rect x="72" y="68" width="28" height="12" rx="2"/><rect x="26" y="68" width="28" height="12" rx="2"/><rect x="210" y="108" width="28" height="12" rx="2"/><rect x="164" y="108" width="28" height="12" rx="2"/><rect x="118" y="108" width="28" height="12" rx="2"/><rect x="72" y="108" width="28" height="12" rx="2"/><rect x="26" y="108" width="28" height="12" rx="2"/><rect x="210" y="148" width="28" height="12" rx="2"/><rect x="164" y="148" width="28" height="12" rx="2"/><rect x="118" y="148" width="28" height="12" rx="2"/><rect x="72" y="148" width="28" height="12" rx="2"/><rect x="26" y="148" width="28" height="12" rx="2"/></g>
+        <text x="16" y="184" text-anchor="start" font-family="Geist Mono,monospace" font-size="9.5" fill="#6B6F7A">BIG ROOM · WORKSPACE</text>
+        <!-- stair enclosure: stairs run down onto the landing -->
+        <rect x="320" y="8" width="84" height="142" fill="#fff"/>
+        <g stroke="#CDDAEE"><line x1="402" y1="22" x2="322" y2="22"/><line x1="402" y1="31" x2="322" y2="31"/><line x1="402" y1="40" x2="322" y2="40"/><line x1="402" y1="49" x2="322" y2="49"/><line x1="402" y1="58" x2="322" y2="58"/><line x1="402" y1="67" x2="322" y2="67"/><line x1="402" y1="76" x2="322" y2="76"/><line x1="402" y1="85" x2="322" y2="85"/><line x1="402" y1="94" x2="322" y2="94"/></g>
+        <line x1="404" y1="8" x2="320" y2="8" stroke="#B8CCEA" stroke-dasharray="4 3"/>
+        <rect x="338" y="44" width="48" height="16" rx="3" fill="#fff"/>
+        <text x="362" y="55" text-anchor="middle" font-family="Geist Mono,monospace" font-size="9.5" fill="#6B6F7A">DOWN ↓</text>
+        <text text-anchor="end" x="398" y="114" font-family="Geist Mono,monospace" font-size="8.5" fill="#9DA1AC">LANDING</text>
+        <!-- walls -->
+        <g fill="url(#conc2)">
+          <rect x="404" y="8" width="6" height="150"/>
+          <rect x="312" y="8" width="8" height="100"/><rect x="312" y="148" width="8" height="10"/>
+          <rect x="312" y="150" width="98" height="8"/>
+        </g>
+        <!-- outlet on the facing wall -->
+        <rect x="354" y="142" width="14" height="8" rx="1.5" fill="#fff" stroke="#3A3D45"/>
+        <g stroke="#3A3D45" stroke-width="1.2"><line x1="363.5" y1="144.5" x2="363.5" y2="147.5"/><line x1="358.5" y1="144.5" x2="358.5" y2="147.5"/></g>
+        <text x="361" y="170" text-anchor="middle" font-family="Geist Mono,monospace" font-size="8.5" fill="#6B6F7A">WALL · OUTLET</text>
+        <!-- double doors, swinging out into the big room -->
+        <g fill="none" stroke="#3A3D45" stroke-width="1.5"><line x1="312" y1="108" x2="292" y2="108"/><line x1="312" y1="148" x2="292" y2="148"/></g>
+        <g fill="none" stroke="#9DA1AC" stroke-dasharray="2 2"><path d="M312 128 A20 20 0 0 1 292 108"/><path d="M312 128 A20 20 0 0 0 292 148"/></g>
+        <text text-anchor="end" x="306" y="101" font-family="Geist Mono,monospace" font-size="8.5" fill="#6B6F7A">← DOUBLE DOORS</text>
+        <!-- path the signal has to travel -->
+        <path d="M380 128 H264 Q150 128 36 40" fill="none" stroke="#9DA1AC" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <g font-family="Geist Mono,monospace" font-size="11" font-weight="600" text-anchor="middle" fill="#fff">
+          <circle id="spmA" cx="380" cy="128" r="12"/><text x="380" y="132">A</text>
+          <circle id="spmB" cx="264" cy="128" r="12"/><text x="264" y="132">B</text>
+          <circle id="spmC" cx="32" cy="34" r="12"/><text x="32" y="38">C</text>
+        </g>
+      </svg>
+        <div class="sp-row"><label for="spA"><b>A</b> Landing, at the outlet<small>bottom of the stairs</small></label><input type="range" id="spA" min="-90" max="-40" step="1" value="-62" aria-describedby="spAo"><output id="spAo" for="spA"></output><div class="sp-scale" aria-hidden="true"><span style="--t:0">−90</span><span class="th" style="--t:.4">−70</span><span class="th" style="--t:.5">−65</span><span style="--t:1">−40</span></div></div>
+        <div class="sp-row"><label for="spB"><b>B</b> Through the double doors<small>first desks in the big room</small></label><input type="range" id="spB" min="-90" max="-40" step="1" value="-74" aria-describedby="spBo"><output id="spBo" for="spB"></output><div class="sp-scale" aria-hidden="true"><span style="--t:0">−90</span><span class="th" style="--t:.4">−70</span><span class="th" style="--t:.5">−65</span><span style="--t:1">−40</span></div></div>
+        <div class="sp-row"><label for="spC"><b>C</b> Far end of the big room<small>the hardest spot to reach</small></label><input type="range" id="spC" min="-90" max="-40" step="1" value="-80" aria-describedby="spCo"><output id="spCo" for="spC"></output><div class="sp-scale" aria-hidden="true"><span style="--t:0">−90</span><span class="th" style="--t:.4">−70</span><span class="th" style="--t:.5">−65</span><span style="--t:1">−40</span></div></div>
+      <div class="sp-key"><span style="--c:#047857">−65 dBm or better · strong</span><span style="--c:#D97706">−65 to −70 · fair</span><span style="--c:#E0241B">below −70 · weak</span></div>
+      <div class="sp-verdict" aria-live="polite"><div class="rule-lbl">Next step</div><div class="sp-vt" id="spVerdict"></div><div class="sp-vc">Hardware total <span id="spTotal" data-p="u5g poe ux7"></span></div></div>
+    </div>
+
+    <div class="sp-card">
+      <ol class="sp-steps" data-stack="1">
+      <li class="sp-step base" data-k="base"><span class="sp-n">1</span><div><div class="sp-t">Buy the 5G Max, PoE+ adapter and UX7, then survey</div><div class="sp-d">Run the modem's long cable down the stairwell to the UX7's WAN port, bring up 5G and walk spots A, B and C with WiFiman.</div></div><div class="sp-c"><span class="sp-tot" data-p="u5g poe ux7"></span></div></li>
+      <li class="sp-step " data-k="done"><span class="sp-n">2</span><div><div class="sp-t">Stop here</div><div class="sp-d">All three spots read −70 dBm or better. No more hardware.</div></div><div class="sp-c"><span class="sp-add">+ $0</span><span class="sp-tot" data-p="u5g poe ux7"></span></div></li>
+      <li class="sp-step " data-k="mesh"><span class="sp-n">2</span><div><div class="sp-t">Add a second UX7 as a mesh point at the landing</div><div class="sp-d">The landing is strong enough (−65 dBm or better) to feed a mesh point, but the big room is weak. Plug the UX7 into the outlet on the landing wall.</div></div><div class="sp-c"><span class="sp-add">+ <span data-p="ux7"></span></span><span class="sp-tot" data-p="u5g poe ux7 ux7"></span></div></li>
+      <li class="sp-step " data-k="boost"><span class="sp-n">2</span><div><div class="sp-t">Add the U7 Outdoor aimed at the landing, plus a second UX7</div><div class="sp-d">The landing itself is too weak to feed a mesh point. Add the directional U7 Outdoor and its PoE+ adapter at the top, patched into the UX7's LAN port and aimed at the landing, then the second UX7 there.</div></div><div class="sp-c"><span class="sp-add">+ <span data-p="u7o poe ux7"></span></span><span class="sp-tot" data-p="u5g poe ux7 u7o poe ux7"></span></div></li>
+      <li class="sp-step follow" data-k="more"><span class="sp-n">3</span><div><div class="sp-t">If C is still weak after re-survey: second UX7</div><div class="sp-d">Add another mesh point further out in the big room, at an outlet with a clear view back to the first.</div></div><div class="sp-c"><span class="sp-add">+ <span data-p="ux7"></span></span><span class="sp-tot">—</span></div></li>
+      <li class="sp-step follow" data-k="exit"><span class="sp-n">3</span><div><div class="sp-t">If the landing is still below −70 dBm: return it</div><div class="sp-d">Return everything inside the 30-day window (B&amp;H, Amazon) for a full refund.</div></div><div class="sp-c"><span class="sp-tot">—</span></div></li>
+      </ol>
+      <ol class="sp-steps" data-stack="2">
+      <li class="sp-step base" data-k="base"><span class="sp-n">1</span><div><div class="sp-t">Buy the Dream Router 5G Max and survey</div><div class="sp-d">Set it at the stairwell threshold, bring up 5G and walk spots A, B and C with WiFiman.</div></div><div class="sp-c"><span class="sp-tot" data-p="udr5g"></span></div></li>
+      <li class="sp-step " data-k="done"><span class="sp-n">2</span><div><div class="sp-t">Stop here</div><div class="sp-d">All three spots read −70 dBm or better. No more hardware.</div></div><div class="sp-c"><span class="sp-add">+ $0</span><span class="sp-tot" data-p="udr5g"></span></div></li>
+      <li class="sp-step " data-k="mesh"><span class="sp-n">2</span><div><div class="sp-t">Add a UX7 mesh point at the landing</div><div class="sp-d">The landing is strong enough (−65 dBm or better) to feed a mesh point, but the big room is weak. Plug the UX7 into the outlet on the landing wall.</div></div><div class="sp-c"><span class="sp-add">+ <span data-p="ux7"></span></span><span class="sp-tot" data-p="udr5g ux7"></span></div></li>
+      <li class="sp-step " data-k="boost"><span class="sp-n">2</span><div><div class="sp-t">Add the U7 Outdoor aimed at the landing, plus the UX7</div><div class="sp-d">The landing itself is too weak to feed a mesh point. Add the directional U7 Outdoor and its PoE+ adapter at the top, aimed at the landing, then the UX7 there.</div></div><div class="sp-c"><span class="sp-add">+ <span data-p="u7o poe ux7"></span></span><span class="sp-tot" data-p="udr5g u7o poe ux7"></span></div></li>
+      <li class="sp-step follow" data-k="more"><span class="sp-n">3</span><div><div class="sp-t">If C is still weak after re-survey: second UX7</div><div class="sp-d">Add another mesh point further out in the big room, at an outlet with a clear view back to the first.</div></div><div class="sp-c"><span class="sp-add">+ <span data-p="ux7"></span></span><span class="sp-tot">—</span></div></li>
+      <li class="sp-step follow" data-k="exit"><span class="sp-n">3</span><div><div class="sp-t">If the landing is still below −70 dBm: return it</div><div class="sp-d">Return everything inside the 30-day window (B&amp;H, Amazon) for a full refund.</div></div><div class="sp-c"><span class="sp-tot">—</span></div></li>
+      </ol>
+    </div>
+  </div>
+  <p class="note">−65 dBm is about the weakest signal that can reliably feed a mesh point. −70 dBm is the minimum for usable staff Wi-Fi. Mesh roughly halves throughput through the UX7, which is still more than the 5G connection delivers. The UX7 plugs into the outlet on the landing wall. The landing is part of the fire stair, so confirm with facilities that a small plug-in device is allowed there. If the double doors are steel fire doors that stay closed, they block a lot of signal: survey B with the doors shut.</p>
+</section>
+
+<!-- 06 -->
+<section class="section" id="plans">
+  <div class="sec-eye">06 · 5G Service Plans</div>
+  <h2 class="sec-title">What the connection costs over 2–3 years</h2>
+  <p class="sec-lede">Every option needs a business data-only plan whose SIM can go in our own modem. Ubiquiti certifies the UniFi 5G Max for AT&amp;T and T-Mobile. Verizon isn't supported yet. Plan prices are list prices with the autopay discount, checked 2026-10-12. Taxes and carrier fees are extra.</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Plan</th><th>Data and speed</th><th class="num">Monthly</th><th class="num">2 years</th><th class="num">3 years</th></tr></thead>
+      <tbody>
+        <tr class="rec"><td><strong>T-Mobile Business Internet Unlimited, BYOD</strong> ✓<sub class="v"><a href="https://www.t-mobile.com/business">T-Mobile</a></sub></td><td>Unlimited, no speed cap. Always lower priority than phones at busy times. Tied to the activation address, which suits a fixed site</td><td class="num">$60</td><td class="num">$1,475</td><td class="num">$2,195</td></tr>
+        <tr><td><strong>T-Mobile Business Internet 100GB</strong><sub class="v"><a href="https://www.t-mobile.com/business">T-Mobile</a></sub></td><td>100 GB, then slowed to 600 Kbps, or $2/GB more. Too tight if staff stream video or sync large files</td><td class="num">$50</td><td class="num">$1,235</td><td class="num">$1,835</td></tr>
+        <tr><td><strong>AT&amp;T Wireless Broadband Standard</strong><sub class="v"><a href="https://www.business.att.com/">AT&amp;T</a></sub></td><td>Unlimited, capped at 25 Mbps</td><td class="num">$70</td><td class="num">$1,680</td><td class="num">$2,520</td></tr>
+        <tr><td><strong>AT&amp;T Wireless Broadband Advanced</strong><sub class="v"><a href="https://www.business.att.com/">AT&amp;T</a></sub></td><td>Unlimited, capped at 50 Mbps</td><td class="num">$80</td><td class="num">$1,920</td><td class="num">$2,880</td></tr>
+        <tr><td><strong>AT&amp;T Wireless Broadband Premium</strong><sub class="v"><a href="https://www.business.att.com/">AT&amp;T</a></sub></td><td>Unlimited, capped at 100 Mbps</td><td class="num">$100</td><td class="num">$2,400</td><td class="num">$3,600</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Totals include T-Mobile's $35 setup fee; taxes extra. Order the BYOD plan through T-Mobile Business Sales. Confirm prices on the quote.</p>
+
+  <h3 class="sub">Cost of doing nothing: staying on a VPN</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Approach</th><th class="num">Monthly</th><th class="num">3 years</th><th>Risk</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Mullvad VPN</strong><sub class="v"><a href="https://mullvad.net/en/pricing">Mullvad</a></sub><br><input type="number" class="vpn-n" id="vpnDev" min="1" value="10" aria-label="Staff devices"> devices = <span id="vpnAcc"></span></td><td class="num" id="vpnMo"></td><td class="num" id="vpn3y"></td><td>Breaks DOE policy. Block expected.</td></tr>
+        <tr class="rec"><td><strong>5G staff network</strong><br>Option 1 + unlimited plan</td><td class="num">$60–70</td><td class="num" data-tco="u5g poe ux7"></td><td>None. Outside DOE network.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">The VPN is cheaper until DOE blocks it. Then staff lose the tools with no fallback.</p>
+</section>
+
+<!-- 07 -->
+<section class="section" id="techsoup">
+  <div class="sec-eye">07 · Cisco Donation</div>
+  <h2 class="sec-title">Option 4: applying through TechSoup</h2>
+  <p class="sec-lede">Cisco donates Meraki gear to eligible nonprofits through <a href="https://page.techsoup.org/cisco-and-meraki-offers-nonprofits">TechSoup</a>. We pay only TechSoup's admin fee, but the licenses expire, so this option has a recurring cost the UniFi options don't.</p>
+
+  <div class="rule-box rb-amber">
+    <div><div class="rule-lbl">Confirm before applying</div>
+    <div class="rule-txt">Organizations affiliated with a parent that has more than 20 affiliates are excluded. Ask TechSoup whether a FIRST Regional Partner counts.</div>
+    <div class="rule-sub">Also excluded: Cisco Networking Academy providers, and anyone who bought Meraki gear in the past 6 months.</div></div>
+  </div>
+
+  <h3 class="sub">How to apply</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Step</th><th>What to do</th><th>Lead time</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1 · Check eligibility</strong></td><td>Email <a href="mailto:ciscoteam@techsoup.org">ciscoteam@techsoup.org</a>: does the affiliate rule apply to us, and can the MG52 be donated?</td><td>3–5 business days</td></tr>
+        <tr><td><strong>2 · Register</strong></td><td>Join <a href="https://www.techsoup.org">TechSoup</a> with NYC FIRST's EIN and 501(c)(3) letter, and wait for validation</td><td>Varies, start now</td></tr>
+        <tr><td><strong>3 · Request the APs</strong></td><td>On the <a href="https://page.techsoup.org/cisco-and-meraki-offers-nonprofits">Cisco page</a>, click "Place a donation request" and add 2× <a href="https://www.techsoup.org/products/cisco-meraki-cw9172i-wi-fi-7-wireless-access-point-with-5-year-license-hw-59940-">CW9172I with 5-year license</a></td><td>Cisco reviews each request</td></tr>
+        <tr><td><strong>4 · Request the MG52</strong></td><td>As a donation through the <a href="https://support.techsoup.org/hc/en-us/articles/46607075611547-Request-a-Cisco-Product-Not-Available-on-the-TechSoup-Website">Custom Cisco Requests form</a> if step 1 allows it; otherwise the <a href="https://www.techsoup.org/cisco-meraki/cisco-meraki-gateways">MG52</a> and <a href="https://www.techsoup.org/products/cisco-meraki-5-year-enterprise-license-for-mg52-and-mg52e-cellular-gateways-g-58579-">5-year license</a> from the discount catalog</td><td>About 3 weeks after approval</td></tr>
+        <tr><td><strong>5 · Activate</strong></td><td>Claim the order in the Meraki Dashboard, order the data plan, and set a reminder 90 days before the licenses expire</td><td>1 day</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Don't buy any Meraki gear elsewhere first. It would block the donation for 6 months.</p>
+
+  <h3 class="sub">Cost over time</h3>
+  <div class="rule-box rb-blue">
+    <div><div class="rule-lbl">Do the 5-year licenses end?</div>
+    <div class="rule-txt">Yes. There's no lifetime license. In year 5 we renew through TechSoup at that year's fee, and eligibility is checked again.</div>
+    <div class="rule-sub">If a license lapses, Meraki allows 30 days' grace, then the network stops carrying traffic.</div></div>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>When</th><th>What</th><th class="num">Option 4 · Cisco</th><th class="num">Option 1 · UniFi</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Now</strong></td><td>Hardware and 5 years of licenses</td><td class="num" data-p="mg52 mg52l cw72 cw72 poe poe poe"></td><td class="num" data-p="u5g poe ux7"></td></tr>
+        <tr><td><strong>Every month</strong></td><td>5G business data plan</td><td class="num">$60–70</td><td class="num">$60–70</td></tr>
+        <tr><td><strong>Year 5</strong></td><td>Renew the modem license and both AP licenses at today's fees</td><td class="num" data-p="mg52l mrl mrl"></td><td class="num">$0</td></tr>
+        <tr class="total"><td>5-year total</td><td>Hardware + 60 months of data</td><td class="num" data-tco5="mg52 mg52l cw72 cw72 poe poe poe"></td><td class="num" data-tco5="u5g poe ux7"></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">The year 5 renewal pays for years 6–10. Admin fees are non-refundable, so test the carrier signal with a phone before ordering.</p>
+</section>
+
+</main>
+</div>
+
+<footer>NYC FIRST · STEM Center · Proposal, independent 5G staff network · Prices checked 2026-09-29 (U7 Outdoor and UX7 on 2026-10-12, TechSoup fees on 2026-10-13); confirm at checkout.</footer>
+
+<script>
+// ponytail: plain DOM, no framework
+// price source toggle. null = not sold by that vendor, missing = not yet known.
+let curSrc;
+const PRICES = {
+  amazon:   {udr5g:644.99, u7o:215.64, ux7:240.39, u5g:455.99, poe:22, glx:379.99},
+  ubiquiti: {udr5g:538, u7o:219, ux7:219, u5g:430, poe:15, glx:null}, // incl. Ubiquiti surcharge
+  bh:       {}, // TODO: B&H blocks scraping; fill in by hand. Missing key = price TBD
+};
+// TechSoup admin fees, same whatever the retailer toggle says (2026-10-13). mrl = MR/CW 5-year renewal license
+const TECHSOUP = {mg52:928.61, mg52l:677.56, cw72:389, mrl:301.05};
+Object.values(PRICES).forEach(p => Object.assign(p, TECHSOUP));
+const SRC = {amazon:['Amazon','the lowest new-condition Amazon offer'], ubiquiti:['Ubiquiti Store','Ubiquiti Store prices, surcharge included'], bh:['B&H','B&H Photo prices']};
+const money = n => n === undefined ? 'TBD' : n === null ? 'Not sold' : '$' + n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+function applySrc(src) {
+  curSrc = src;
+  const pr = PRICES[src];
+  const sum = keys => keys.split(' ').reduce((t,k) => t == null ? t : pr[k] == null ? pr[k] : t + pr[k], 0);
+  document.querySelectorAll('[data-p]').forEach(el => el.textContent = money(sum(el.dataset.p)));
+  document.querySelectorAll('[data-seg]').forEach(el => el.style.flex = sum(el.dataset.seg) ?? 0);
+  document.querySelectorAll('[data-pct]').forEach(el => { const [k,of] = el.dataset.pct.split('|'), t = sum(of); el.textContent = t ? Math.round(sum(k)/t*100) + '%' : '—'; });
+  document.querySelectorAll('[data-tco]').forEach(el => { const t = sum(el.dataset.tco); el.textContent = t == null ? '—' : `$${((t+2195)/1000).toFixed(1)}–${((t+2520)/1000).toFixed(1)}k`; }); // 36 mo: T-Mobile $60 + $35 setup to AT&T $70, see #plans
+  document.querySelectorAll('[data-tco5]').forEach(el => { const t = sum(el.dataset.tco5); el.textContent = t == null ? '—' : `$${((t+3635)/1000).toFixed(1)}–${((t+4200)/1000).toFixed(1)}k`; }); // 60 mo: T-Mobile $60 + $35 setup to AT&T $70
+  document.querySelectorAll('[data-src-name]').forEach(el => el.textContent = SRC[src][0]);
+  $('srcNote').textContent = SRC[src][1];
+}
+const $ = id => document.getElementById(id);
+document.querySelectorAll('input[name=src]').forEach(i => i.addEventListener('change', () => applySrc(i.value)));
+applySrc(document.querySelector('input[name=src]:checked').value);
+
+// scaling path: thresholds -65 (feeds a mesh point) and -70 (usable staff Wi-Fi)
+const band = v => v >= -65 ? ['strong', '#047857'] : v >= -70 ? ['fair', '#D97706'] : ['weak', '#E0241B'];
+function updateScaling() {
+  const [a, b, c] = ['A', 'B', 'C'].map(k => +$('sp' + k).value);
+  ['A', 'B', 'C'].forEach((k, i) => {
+    const v = [a, b, c][i], [lbl, col] = band(v);
+    $('sp' + k + 'o').textContent = `${String(v).replace('-', '−')} dBm · ${lbl}`;
+    $('sp' + k).style.setProperty('--p', (v + 90) / 50); // ponytail: range is fixed at -90..-40
+    $('sp' + k).parentElement.dataset.band = lbl;
+    $('spm' + k).setAttribute('fill', col);
+  });
+  const key = Math.min(a, b, c) >= -70 ? 'done' : a >= -65 ? 'mesh' : 'boost';
+  const ol = document.querySelector(`.sp-steps[data-stack="${document.querySelector('input[name=sp]:checked').value}"]`);
+  ol.querySelectorAll('.sp-step').forEach(li => {
+    li.classList.toggle('on', li.dataset.k === key);
+    li.classList.toggle('live', li.dataset.k === 'more' ? key !== 'done' : li.dataset.k === 'exit' && key === 'boost');
+  });
+  const on = ol.querySelector('.sp-step.on');
+  $('spVerdict').textContent = on.querySelector('.sp-t').textContent;
+  $('spTotal').dataset.p = on.querySelector('.sp-tot').dataset.p;
+  applySrc(curSrc);
+}
+document.querySelectorAll('#scaling input').forEach(i => i.addEventListener('input', updateScaling));
+updateScaling();
+
+// VPN comparison: Mullvad is €5/mo (~$5.58) per account, 5 devices each
+function updateVpn() {
+  const acc = Math.ceil(Math.max(1, +$('vpnDev').value || 1) / 5), mo = acc * 5.58;
+  $('vpnAcc').textContent = acc + (acc > 1 ? ' accounts' : ' account');
+  $('vpnMo').textContent = '$' + mo.toFixed(2);
+  $('vpn3y').textContent = '$' + Math.round(mo * 36).toLocaleString('en-US');
+}
+$('vpnDev').addEventListener('input', updateVpn);
+updateVpn();
+
+// TOC highlight
+const links = [...document.querySelectorAll('#toc a')];
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) links.forEach(a => a.classList.toggle('on', a.hash === '#' + e.target.id));
+}), {rootMargin: '-40% 0px -55% 0px'});
+document.querySelectorAll('main .section').forEach(s => io.observe(s));
+</script>
+<script>
+// <base href> (stamped when deployed in the d13 repo) makes href="#x" resolve to the base dir, not this page. Scroll in place instead.
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href^="#"]'), t = a && document.getElementById(a.getAttribute('href').slice(1));
+  if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); history.replaceState(null, '', location.pathname + location.search + a.getAttribute('href')); }
+});
+</script>
+</body>
+</html>
